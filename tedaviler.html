@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedavilerimiz — Dt. Naime Altuntaş</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:    #2CBCB3;
+  --teal-h:  #26ABA3;
+  --teal-bg: #EAF8F7;
+  --teal-s:  #F2FBFA;
+  --dark:    #1C2B38;
+  --dark2:   #131E28;
+  --txt:     #1C2B38;
+  --txt2:    #6E808D;
+  --white:   #fff;
+  --gold:    #F5A623;
+  --bdr:     #E5ECED;
+  --sh:      0 2px 16px rgba(0,0,0,.07);
+  --sh2:     0 8px 32px rgba(0,0,0,.11);
+  --r:       12px;
+  --r2:      16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
+
+/* TOP BAR */
+.topbar{background:var(--teal);padding:9px 20px}
+.topbar-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topbar-left{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
+.topbar-phone{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;white-space:nowrap}
+
+/* NAV */
+.nav-shell{background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:900}
+nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-ico{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-name{font-size:15px;font-weight:700;color:var(--txt);line-height:1.25}
+.logo-sub{font-size:11px;font-weight:500;color:var(--txt2)}
+.nav-ul{display:flex;gap:2px;list-style:none;align-items:center}
+.nav-ul>li>a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px;transition:color .18s,background .18s;display:flex;align-items:center;gap:3px}
+.nav-ul>li>a:hover,.nav-ul>li>a.active{color:var(--teal);background:var(--teal-bg)}
+.nav-dd{position:relative}
+.nav-dd>a::after{content:'▾';font-size:10px;opacity:.55}
+.nav-dd-menu{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:7px;min-width:210px;box-shadow:var(--sh2);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s;z-index:100}
+.nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dd-menu a{display:block;color:var(--txt2);text-decoration:none;font-size:13px;font-weight:600;padding:9px 12px;border-radius:8px;transition:color .15s,background .15s}
+.nav-dd-menu a:hover{color:var(--teal);background:var(--teal-bg)}
+.nav-btn{background:var(--teal);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:10px 20px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s}
+.nav-btn:hover{background:var(--teal-h);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--bdr);padding:4px 20px 20px}
+.mob-nav.open{display:flex}
+.mob-nav>a{color:var(--txt2);text-decoration:none;font-size:15px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--bdr)}
+.mob-nav>a:last-child{color:var(--teal);border:none}
+.mob-sub{display:flex;flex-direction:column;padding:4px 0 4px 16px;border-bottom:1px solid var(--bdr)}
+.mob-sub a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 0;border:none}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--dark) 0%,#253545 100%);padding:64px 20px;text-align:center;color:#fff}
+.page-hero .badge{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.page-hero h1{font-size:clamp(28px,4vw,46px);font-weight:700;margin-bottom:12px;margin-top:14px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.72);max-width:540px;margin:0 auto 24px;line-height:1.7}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.5)}
+.breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
+.breadcrumb a:hover{color:#fff}
+
+/* TOC */
+.toc-wrap{background:var(--teal-s);padding:24px 20px;border-bottom:1px solid var(--bdr)}
+.toc-in{max-width:1160px;margin:0 auto}
+.toc-in h3{font-size:12px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
+.toc-grid{display:flex;flex-wrap:wrap;gap:8px}
+.toc-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--txt2);text-decoration:none;background:#fff;border:1px solid var(--bdr);padding:7px 13px;border-radius:100px;transition:color .18s,border-color .18s,background .18s}
+.toc-link:hover{color:var(--teal);border-color:var(--teal);background:var(--teal-bg)}
+
+/* CONTENT */
+.content{max-width:1160px;margin:0 auto}
+.treat-section{display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:start;padding:72px 20px;border-bottom:1px solid var(--bdr)}
+.treat-section:last-child{border-bottom:none}
+.treat-section:nth-child(even){grid-template-columns:2fr 1fr}
+.treat-section:nth-child(even) .ts-img{order:2}
+.treat-section:nth-child(even) .ts-body{order:1}
+.ts-img img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:4/3;object-fit:cover}
+.ts-ico{width:52px;height:52px;border-radius:14px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.ts-body h2{font-size:clamp(22px,2.4vw,30px);font-weight:700;margin-bottom:12px;line-height:1.25}
+.ts-body p{font-size:14.5px;color:var(--txt2);line-height:1.75;margin-bottom:16px}
+.ts-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.ts-list li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--txt2)}
+.ts-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+.ts-cta{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s}
+.ts-cta:hover{background:var(--teal-h);transform:translateY(-1px)}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-bg);color:var(--teal);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(120deg,var(--teal) 0%,#1FA9A1 100%);padding:44px 20px}
+.cta-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cta-in h3{font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff}
+.cta-in p{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:5px}
+.btn-wht{background:transparent;color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 26px;border-radius:10px;border:2px solid rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.btn-wht:hover{background:rgba(255,255,255,.14);border-color:#fff}
+
+/* FOOTER */
+footer{background:var(--dark);padding:40px 20px 0}
+.foot-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.72;margin:12px 0 18px}
+.fcol h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:16px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:13px;font-weight:500;transition:color .18s}
+.fcol ul li a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.fci-ico{color:var(--teal);font-size:14px;flex-shrink:0;margin-top:1px}
+.fci span{font-size:12.5px;color:rgba(255,255,255,.58);line-height:1.55}
+.foot-bar{background:var(--dark2)}
+.foot-bot{max-width:1160px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot-bot span{font-size:11.5px;color:rgba(255,255,255,.32)}
+.foot-bot .heart{color:var(--teal)}
+
+/* FADE UP */
+.fu{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s ease}
+.fu.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-ul,.nav-btn{display:none}
+  .burger{display:flex}
+  .treat-section,.treat-section:nth-child(even){grid-template-columns:1fr;gap:32px}
+  .treat-section:nth-child(even) .ts-img,.treat-section:nth-child(even) .ts-body{order:unset}
+  .foot-in{grid-template-columns:1fr;gap:28px}
+  .cta-in{flex-direction:column;text-align:center}
+}
+@media(max-width:520px){
+  .topbar-left{display:none}
+  .treat-section{padding:48px 16px}
+  .toc-wrap{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="topbar-left">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.72.85 3.23 2.15 4.16C8.43 12.49 8 14.19 8 16c0 3.31 1.79 6 4 6s4-2.69 4-6c0-1.81-.43-3.51-1.15-4.84C16.15 10.23 17 8.72 17 7c0-2.76-2.24-5-5-5z"/></svg>
+      Sağlıklı gülüşler için buradayız
+    </span>
+    <a href="tel:+902163617181" class="topbar-phone">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +90 216 361 71 81
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-shell">
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+      <div><div class="logo-name">Dt. Naime Altuntaş</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="index.html#anasayfa">Ana Sayfa</a></li>
+      <li class="nav-dd">
+        <a href="tedaviler.html" class="active">Tedaviler</a>
+        <div class="nav-dd-menu">
+          <a href="tedaviler.html">🦷 Tüm Tedaviler</a>
+          <a href="agiz-dis-sagligi.html">💧 Ağız ve Diş Sağlığı</a>
+          <a href="dis-estetigi.html">✨ Diş Estetiği</a>
+        </div>
+      </li>
+      <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+      <li><a href="index.html#iletisim">İletişim</a></li>
+    </ul>
+    <a href="index.html#iletisim" class="nav-btn">Randevu Al</a>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mob-nav" id="mobNav">
+    <a href="index.html#anasayfa">Ana Sayfa</a>
+    <a href="tedaviler.html">Tedaviler</a>
+    <div class="mob-sub">
+      <a href="tedaviler.html">🦷 Tüm Tedaviler</a>
+      <a href="agiz-dis-sagligi.html">💧 Ağız ve Diş Sağlığı</a>
+      <a href="dis-estetigi.html">✨ Diş Estetiği</a>
+    </div>
+    <a href="index.html#hakkimizda">Hakkımızda</a>
+    <a href="index.html#iletisim">İletişim</a>
+    <a href="index.html#iletisim">Randevu Al</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="badge">🦷 Tedavilerimiz</div>
+  <h1>Size Özel Diş Sağlığı Çözümleri</h1>
+  <p>Modern diş hekimliği teknolojileri ve 30+ yıllık deneyimle sunduğumuz kapsamlı tedavi seçenekleri.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Ana Sayfa</a>
+    <span>›</span>
+    <span>Tedaviler</span>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc-wrap">
+  <div class="toc-in">
+    <h3>Tedaviler</h3>
+    <div class="toc-grid">
+      <a href="#cad-cam" class="toc-link">🖥️ CAD/CAM Sistemleri</a>
+      <a href="#dolgular" class="toc-link">🪡 Dolgular</a>
+      <a href="#kanal-tedavileri" class="toc-link">⚡ Kanal Tedavileri</a>
+      <a href="#cerrahi-tedaviler" class="toc-link">🔬 Cerrahi Tedaviler</a>
+      <a href="#implant" class="toc-link">🦷 İmplant</a>
+      <a href="#protezler" class="toc-link">✅ Protezler</a>
+      <a href="#periodontoloji" class="toc-link">🌿 Periodontoloji</a>
+      <a href="#cocuk-disleri" class="toc-link">🧒 Çocuk Dişleri</a>
+      <a href="#ortodonti" class="toc-link">😁 Ortodonti</a>
+      <a href="#cene-eklemi" class="toc-link">💆 Çene Eklemi Tedavisi</a>
+      <a href="#radyolojik" class="toc-link">📡 Radyolojik Görüntüleme</a>
+      <a href="#koruyucu" class="toc-link">🛡️ Koruyucu Dişhekimliği</a>
+      <a href="#lazer" class="toc-link">💡 Dişhekimliğinde Lazer</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- CAD/CAM -->
+  <div class="treat-section fu" id="cad-cam">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d236?w=600&q=82" alt="CAD/CAM Sistemleri">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">🖥️</div>
+      <div class="badge">Dijital Dişhekimliği</div>
+      <h2>CAD/CAM Sistemleri</h2>
+      <p>CAD/CAM (Computer Aided Design / Computer Aided Manufacturing) sistemi, dijital diş tasarımı ve üretimini aynı seansta gerçekleştiren ileri teknoloji bir yöntemdir. Geleneksel protez yöntemlerine kıyasla çok daha hızlı ve hassas sonuçlar elde edilir.</p>
+      <ul class="ts-list">
+        <li>Tek seansta porselen kuron ve inley uygulaması</li>
+        <li>Yüksek hassasiyetli dijital ölçü alma — geleneksel ölçü maddesi yok</li>
+        <li>Doğal dişle uyumlu renk ve şekil tasarımı</li>
+        <li>Metal içermeyen, biyouyumlu seramik materyaller</li>
+        <li>Uzun ömürlü ve estetik sonuçlar</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- DOLGULAR -->
+  <div class="treat-section fu" id="dolgular">
+    <div class="ts-body">
+      <div class="ts-ico">🪡</div>
+      <div class="badge">Restoratif Dişhekimliği</div>
+      <h2>Dolgular</h2>
+      <p>Diş çürüklerinin temizlenerek dişin işlevini ve estetiğini yeniden kazandırdığı dolgu tedavileri, modern kompozit ve porselen materyallerle uygulanmaktadır. Dişin rengine özel uyum sağlayan estetik dolgular, gülüşünüzün bütünlüğünü korur.</p>
+      <ul class="ts-list">
+        <li>Diş rengine uyumlu kompozit (beyaz) dolgular</li>
+        <li>Porselen inley/onley restorasyon seçenekleri</li>
+        <li>Minimal diş dokusu kaybıyla uygulama</li>
+        <li>Ağrısız tedavi — gelişmiş anestezi yöntemleri</li>
+        <li>Uzun ömürlü ve yüksek estetik sonuç</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=82" alt="Diş Dolgusu">
+    </div>
+  </div>
+
+  <!-- KANAL -->
+  <div class="treat-section fu" id="kanal-tedavileri">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=82" alt="Kanal Tedavisi">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">⚡</div>
+      <div class="badge">Endodonti</div>
+      <h2>Kanal Tedavileri</h2>
+      <p>Dişin iç kısmındaki enfeksiyonu temizleyerek dişi kurtarma işlemi olan kanal tedavisi, gelişmiş rotary sistemler ve apex locator cihazları ile ağrısız ve güvenli şekilde uygulanmaktadır. Çekilmesi gereken dişler bu sayede uzun yıllar korunabilmektedir.</p>
+      <ul class="ts-list">
+        <li>Rotary endodontik sistemlerle minimum ağrı</li>
+        <li>Apex locator ile kanal uzunluğu hassas tespiti</li>
+        <li>Tek veya çok seanslı kanal tedavisi seçenekleri</li>
+        <li>Tedavi sonrası porselen veya zirkonyum kaplama</li>
+        <li>Yüksek başarı oranı ile diş koruma</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- CERRAHİ -->
+  <div class="treat-section fu" id="cerrahi-tedaviler">
+    <div class="ts-body">
+      <div class="ts-ico">🔬</div>
+      <div class="badge">Oral Cerrahi</div>
+      <h2>Cerrahi Tedaviler</h2>
+      <p>Gömülü diş çekimi, kist operasyonu, apikal rezeksiyon ve frenulum operasyonu gibi cerrahi işlemler steril ortamda ve uzman ellerde gerçekleştirilmektedir. Modern alet ekipmanları ile cerrahi süreç en az rahatsızlıkla tamamlanır.</p>
+      <ul class="ts-list">
+        <li>Gömülü 20 yaş dişi çekimi</li>
+        <li>Kist ve tümör operasyonları</li>
+        <li>Apikal rezeksiyon (kök ucu rezeksiyonu)</li>
+        <li>Frenektomi (dudak / dil bağı ameliyatı)</li>
+        <li>İmplant öncesi kemik greftleme</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=82" alt="Cerrahi Tedavi">
+    </div>
+  </div>
+
+  <!-- İMPLANT -->
+  <div class="treat-section fu" id="implant">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=82" alt="Diş İmplantı">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">🦷</div>
+      <div class="badge">İmplant</div>
+      <h2>İmplant</h2>
+      <p>Çene kemiğine yerleştirilen titanyum vidalar üzerine yapılan yapay dişler, kaybedilen dişin işlevini ve estetiğini en doğal şekilde geri kazandırır. Doğru bakım yapıldığında ömür boyu kullanılabilen implantlar, komşu dişleri etkilemez.</p>
+      <ul class="ts-list">
+        <li>Titanyum vida ile çene kemiğine entegrasyon</li>
+        <li>Tek diş, köprü veya tam protez alternatifleri</li>
+        <li>Doğal diş görünümü ve çiğneme kuvveti</li>
+        <li>Komşu dişlere zarar vermez</li>
+        <li>Uygun adaylarda yüksek başarı oranı (%95+)</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- PROTEZLER -->
+  <div class="treat-section fu" id="protezler">
+    <div class="ts-body">
+      <div class="ts-ico">✅</div>
+      <div class="badge">Protetik Dişhekimliği</div>
+      <h2>Protezler</h2>
+      <p>Eksik dişlerin tamamlanması için uygulanan sabit ve hareketli protez çözümleri, kişinin yüz estetiğini ve çiğneme fonksiyonunu yeniden sağlar. Porselen ve zirkonyum materyallerle hazırlanan sabit protezler son derece doğal görünümlüdür.</p>
+      <ul class="ts-list">
+        <li>Sabit porselen ve zirkonyum köprü protezler</li>
+        <li>Hareketli kısmi ve tam protezler</li>
+        <li>İmplant üstü sabit protez uygulamaları</li>
+        <li>Hassas bağlantılı (teleskopik) protezler</li>
+        <li>Dijital ölçü ile hassas uyum ve estetik</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=82" alt="Diş Protezi">
+    </div>
+  </div>
+
+  <!-- PERİODONTOLOJİ -->
+  <div class="treat-section fu" id="periodontoloji">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1585421514284-efce12b4ba74?w=600&q=82" alt="Periodontoloji">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">🌿</div>
+      <div class="badge">Periodontoloji</div>
+      <h2>Periodontoloji</h2>
+      <p>Diş eti ve diş çevresindeki dokuları etkileyen hastalıkların teşhis ve tedavisiyle ilgilenen periodontoloji, diş kayıplarının en önemli nedenlerinden olan diş eti iltihabına karşı koruyucu ve tedavi edici çözümler sunar.</p>
+      <ul class="ts-list">
+        <li>Diştaşı temizliği (scaling) ve kök düzleştirme</li>
+        <li>Gingivektomi ve dişeti şekillendirme</li>
+        <li>Cerrahi periodontal tedavi</li>
+        <li>Dişeti çekilmesi tedavisi</li>
+        <li>Periyodik kontrol ve bakım programı</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- ÇOCUK DİŞLERİ -->
+  <div class="treat-section fu" id="cocuk-disleri">
+    <div class="ts-body">
+      <div class="ts-ico">🧒</div>
+      <div class="badge">Pedodonti</div>
+      <h2>Çocuk Dişleri</h2>
+      <p>Çocuklara özgü diş tedavileri ve koruyucu uygulamalar, sağlıklı ağız alışkanlıklarının küçük yaştan kazanılmasını sağlar. Minik hastalarımıza güven veren, eğlenceli ve korkusuz bir deneyim yaşatmak en büyük önceliğimizdir.</p>
+      <ul class="ts-list">
+        <li>Süt dişi dolgusu ve kanal tedavisi</li>
+        <li>Fissür örtücü ile çürük önleme</li>
+        <li>Flor uygulaması</li>
+        <li>Ortodontik takip ve yönlendirme</li>
+        <li>Çocuklara özel korkusuz tedavi yaklaşımı</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&q=82" alt="Çocuk Diş Hekimliği">
+    </div>
+  </div>
+
+  <!-- ORTODONTİ -->
+  <div class="treat-section fu" id="ortodonti">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=82" alt="Ortodonti">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">😁</div>
+      <div class="badge">Ortodonti</div>
+      <h2>Ortodonti</h2>
+      <p>Dişlerin ve çenelerin düzenlenmesi için uygulanan ortodontik tedaviler, hem estetik hem de fonksiyonel açıdan büyük fayda sağlar. Görünmez şeffaf plaklar veya geleneksel braket sistemleriyle her yaşta tedavi mümkündür.</p>
+      <ul class="ts-list">
+        <li>Şeffaf plak (aligner) tedavileri</li>
+        <li>Metal ve seramik braket uygulamaları</li>
+        <li>Lingual (dil tarafı) braket sistemleri</li>
+        <li>Çocuk ve ergen ortodontik tedavileri</li>
+        <li>Tedavi sonrası pekiştirme plakları</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- ÇENE EKLEMİ -->
+  <div class="treat-section fu" id="cene-eklemi">
+    <div class="ts-body">
+      <div class="ts-ico">💆</div>
+      <div class="badge">TME Bozuklukları</div>
+      <h2>Çene Eklemi Tedavisi</h2>
+      <p>Temporomandibüler eklem (TME) bozuklukları; çene ağrısı, baş ağrısı, kulak çınlaması ve çenede ses gelmesi gibi belirtilere yol açabilir. Kapsamlı muayene ve bireysel tedavi planıyla bu sorunlar büyük ölçüde giderilebilir.</p>
+      <ul class="ts-list">
+        <li>TME tanı ve değerlendirme</li>
+        <li>Gece plağı (okluzal splint) uygulaması</li>
+        <li>Oklüzyon düzenleme tedavisi</li>
+        <li>Fizik tedavi yönlendirmesi</li>
+        <li>Botoks ile çene kası rahatlatma</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=82" alt="Çene Eklemi Tedavisi">
+    </div>
+  </div>
+
+  <!-- RADYOLOJİK -->
+  <div class="treat-section fu" id="radyolojik">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=82" alt="Radyolojik Görüntüleme">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">📡</div>
+      <div class="badge">Tanı & Görüntüleme</div>
+      <h2>Radyolojik Görüntüleme</h2>
+      <p>Doğru tanı, başarılı tedavinin temelidir. Kliniğimizde dijital röntgen ve panoramik (full ağız) görüntüleme sistemleri kullanılarak düşük radyasyon dozu ile yüksek çözünürlüklü görüntüler elde edilmektedir.</p>
+      <ul class="ts-list">
+        <li>Dijital periapikal röntgen</li>
+        <li>Panoramik (OPG) görüntüleme</li>
+        <li>Düşük radyasyon dozlu sistemler</li>
+        <li>Hızlı sonuç — tedavi planlamasında anlık destek</li>
+        <li>İmplant planlaması için detaylı görüntü analizi</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+  <!-- KORUYUCU -->
+  <div class="treat-section fu" id="koruyucu">
+    <div class="ts-body">
+      <div class="ts-ico">🛡️</div>
+      <div class="badge">Koruyucu Dişhekimliği</div>
+      <h2>Koruyucu Dişhekimliği</h2>
+      <p>Hastalıkların oluşmadan önlenmesi, tedaviden çok daha az maliyetli ve konforludur. Koruyucu dişhekimliği uygulamaları; diş çürüklerini, diş eti hastalıklarını ve diş kayıplarını engellemeye yönelik sistematik bir yaklaşım sunar.</p>
+      <ul class="ts-list">
+        <li>Flor uygulaması ile diş sertleştirme</li>
+        <li>Fissür örtücü ile çürük riskinin azaltılması</li>
+        <li>Profesyonel diş temizliği ve polisaj</li>
+        <li>Evde kullanım için özel bakım rehberi</li>
+        <li>Düzenli kontrol ve erken teşhis programı</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d236?w=600&q=82" alt="Koruyucu Dişhekimliği">
+    </div>
+  </div>
+
+  <!-- LAZER -->
+  <div class="treat-section fu" id="lazer">
+    <div class="ts-img">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=82" alt="Lazer Tedavi">
+    </div>
+    <div class="ts-body">
+      <div class="ts-ico">💡</div>
+      <div class="badge">Lazer Dişhekimliği</div>
+      <h2>Dişhekimliğinde Lazer Kullanımı</h2>
+      <p>Lazer teknolojisi diş hekimliğinde giderek yaygınlaşan, minimal invaziv ve yüksek konforlu bir tedavi yöntemidir. Yumuşak doku işlemlerinde keskin geçişler, daha az kanama ve hızlı iyileşme sağlar.</p>
+      <ul class="ts-list">
+        <li>Diş eti şekillendirme ve gummy smile tedavisi</li>
+        <li>Aft ve oral yara tedavisi</li>
+        <li>Diş beyazlatma destekli lazer aktivasyonu</li>
+        <li>Minimal kanama ve hızlı iyileşme süreci</li>
+        <li>Çoğu işlemde dikiş gerektirmez</li>
+      </ul>
+      <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-in">
+    <div>
+      <h3>Hangi tedavinin size uygun olduğunu konuşalım.</h3>
+      <p>Ücretsiz ilk muayene için hemen randevu alın.</p>
+    </div>
+    <a href="index.html#iletisim" class="btn-wht">Randevu Al</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <div>
+      <a href="index.html" class="logo">
+        <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+        <div><div class="logo-name" style="color:#fff">Dt. Naime Altuntaş</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
+      </a>
+      <p class="foot-desc">1991'den bu yana güvenilir, samimi ve modern diş sağlığı hizmetleri sunuyoruz.</p>
+    </div>
+    <div class="fcol">
+      <h4>Sayfalar</h4>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="tedaviler.html">Tedaviler</a></li>
+        <li><a href="agiz-dis-sagligi.html">Ağız ve Diş Sağlığı</a></li>
+        <li><a href="dis-estetigi.html">Diş Estetiği</a></li>
+        <li><a href="index.html#iletisim">Randevu Al</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>İletişim</h4>
+      <div class="fci"><span class="fci-ico">📞</span><span><a href="tel:+902163617181" style="color:inherit;text-decoration:none">+90 216 361 71 81</a></span></div>
+      <div class="fci"><span class="fci-ico">📍</span><span>Şemsettin Günaltay Cad. Kocayol Sok. No:2/5 Kat:1, Bostancı / İstanbul</span></div>
+      <div class="fci"><span class="fci-ico">🕐</span><span>Pzt – Cum: 09:00–19:00<br>Cmt: 09:00–14:00 | Paz: Kapalı</span></div>
+    </div>
+  </div>
+</footer>
+<div class="foot-bar">
+  <div class="foot-bot">
+    <span>© 2024 Dt. Ayşe Naime (Kor) Altuntaş — Ağız ve Diş Sağlığı. Tüm hakları saklıdır.</span>
+    <span>Sevgiyle tasarlandı <span class="heart">♡</span></span>
+  </div>
+</div>
+
+<script>
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mobNav');
+burger.addEventListener('click', () => {
+  const open = mobNav.classList.toggle('open');
+  burger.classList.toggle('open', open);
+});
+mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobNav.classList.remove('open');
+  burger.classList.remove('open');
+}));
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
