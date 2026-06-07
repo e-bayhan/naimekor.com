@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Naime Kor — Ağız ve Diş Sağlığı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:    #2CBCB3;
+  --teal-h:  #26ABA3;
+  --teal-bg: #EAF8F7;
+  --teal-s:  #F2FBFA;
+  --dark:    #1C2B38;
+  --dark2:   #131E28;
+  --txt:     #1C2B38;
+  --txt2:    #6E808D;
+  --white:   #fff;
+  --gold:    #F5A623;
+  --bdr:     #E5ECED;
+  --sh:      0 2px 16px rgba(0,0,0,.07);
+  --sh2:     0 8px 32px rgba(0,0,0,.11);
+  --r:       12px;
+  --r2:      16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--teal);padding:9px 20px}
+.topbar-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.topbar span{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
+
+/* ── NAV ── */
+.nav-shell{background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:900}
+nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-ico{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-name{font-size:15px;font-weight:700;color:var(--txt);line-height:1.25}
+.logo-sub{font-size:11px;font-weight:500;color:var(--txt2)}
+.nav-ul{display:flex;gap:2px;list-style:none}
+.nav-ul a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px;transition:color .18s,background .18s}
+.nav-ul a:hover{color:var(--txt);background:#f4f5f6}
+.nav-btn{background:var(--teal);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:10px 20px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s}
+.nav-btn:hover{background:var(--teal-h);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--bdr);padding:4px 20px 20px}
+.mob-nav.open{display:flex}
+.mob-nav a{color:var(--txt2);text-decoration:none;font-size:15px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--bdr)}
+.mob-nav a:last-child{color:var(--teal);border:none}
+
+/* ── SHARED ── */
+.wrap{max-width:1160px;margin:0 auto}
+section{padding:80px 20px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-bg);color:var(--teal);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
+.ttl{font-size:clamp(24px,2.8vw,36px);font-weight:700;line-height:1.25;margin-bottom:12px}
+.sub{font-size:14.5px;color:var(--txt2);line-height:1.75}
+.teal{color:var(--teal)}
+
+/* ── HERO ── */
+.hero{padding:60px 20px 72px}
+.hero-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-rating{display:inline-flex;align-items:center;gap:8px;background:#FFF9ED;border:1px solid #FFE4A0;padding:6px 13px;border-radius:100px;margin-bottom:22px}
+.hero-stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.hero-rating span{font-size:12.5px;font-weight:700;color:#946C10}
+.hero h1{font-size:clamp(28px,3.6vw,50px);font-weight:700;line-height:1.2;margin-bottom:16px}
+.hero-p{font-size:14.5px;color:var(--txt2);line-height:1.75;margin-bottom:22px;max-width:430px}
+.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
+.htag{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--txt2);background:#F5F7F8;border:1px solid var(--bdr);padding:6px 12px;border-radius:100px}
+.htag-check{color:var(--teal);font-weight:700}
+.hero-btns{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:36px}
+.btn-teal{background:var(--teal);color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:10px;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:7px;cursor:pointer;transition:background .2s,transform .15s}
+.btn-teal:hover{background:var(--teal-h);transform:translateY(-1px)}
+.btn-out{background:transparent;color:var(--txt);font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:10px;border:2px solid var(--bdr);text-decoration:none;display:inline-flex;align-items:center;gap:7px;cursor:pointer;transition:border-color .2s,color .2s}
+.btn-out:hover{border-color:var(--teal);color:var(--teal)}
+.hero-stats{display:flex;align-items:center;gap:28px}
+.hst-val{font-size:26px;font-weight:700;line-height:1}
+.hst-lbl{font-size:11.5px;color:var(--txt2);margin-top:3px;font-weight:500}
+.hst-sep{width:1px;height:36px;background:var(--bdr)}
+.hero-img-wrap{position:relative}
+.hero-img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:4/5;object-fit:cover}
+.hfloat{position:absolute;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:12px;padding:11px 15px;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;align-items:center;gap:10px;min-width:180px}
+.hf1{top:18px;right:-14px}
+.hf2{bottom:18px;right:18px}
+.hf-ico{width:34px;height:34px;background:var(--teal-bg);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.hf-t{font-size:12.5px;font-weight:700;color:var(--txt)}
+.hf-s{font-size:11px;color:var(--txt2);margin-top:1px}
+
+/* ── WHY US ── */
+.whyus{background:var(--teal-s)}
+.why-head{text-align:center;margin-bottom:48px}
+.why-head .sub{max-width:480px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.why-card{background:#fff;border-radius:var(--r2);padding:26px 22px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
+.why-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.w-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px}
+.ico-o{background:#FFF3E0}
+.ico-t{background:#E0F7F5}
+.ico-p{background:#FDE8EC}
+.ico-y{background:#FFF8E1}
+.ico-b{background:#E3F2FD}
+.why-card h3{font-size:15px;font-weight:700;margin-bottom:7px}
+.why-card p{font-size:13px;color:var(--txt2);line-height:1.65}
+
+/* ── TREATMENTS ── */
+.treat-head{text-align:center;margin-bottom:44px}
+.treat-head .sub{max-width:520px;margin:0 auto}
+.treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tc{background:#fff;border-radius:var(--r2);overflow:hidden;border:1px solid var(--bdr);box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
+.tc:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.tc-img{position:relative}
+.tc-img img{width:100%;height:190px;object-fit:cover;display:block}
+.tc-badge{position:absolute;top:12px;left:12px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.92);box-shadow:0 2px 8px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;font-size:17px}
+.tc-body{padding:16px 18px 18px}
+.tc-body h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.tc-body p{font-size:12.5px;color:var(--txt2);line-height:1.62;margin-bottom:11px}
+.tc-link{font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
+.tc-link:hover{gap:8px}
+
+/* ── ABOUT ── */
+.about{background:var(--teal-s)}
+.about-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-img-w{position:relative}
+.about-img-w img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:3/4;object-fit:cover;object-position:top}
+.about-yr{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.95);border-radius:14px;padding:14px 18px;box-shadow:0 4px 20px rgba(0,0,0,.11)}
+.ayr-n{font-size:26px;font-weight:700;color:var(--txt);line-height:1}
+.ayr-l{font-size:12px;font-weight:600;color:var(--txt2);margin-top:3px}
+.about-txt .sub{margin-bottom:14px}
+.afacts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.af{background:#fff;border-radius:var(--r);padding:13px 15px;display:flex;align-items:flex-start;gap:10px;box-shadow:var(--sh)}
+.af-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.af-t{font-size:13px;font-weight:700;margin-bottom:2px}
+.af-s{font-size:11.5px;color:var(--txt2)}
+
+/* ── TESTIMONIALS ── */
+.test-head{text-align:center;margin-bottom:44px}
+.test-head .sub{max-width:480px;margin:0 auto}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{background:#fff;border:1px solid var(--bdr);border-radius:var(--r2);padding:22px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.tq{font-size:40px;font-weight:900;color:var(--teal);line-height:.75;opacity:.4;font-family:serif;margin-bottom:6px}
+.tstars{color:var(--gold);font-size:13px;letter-spacing:1px;margin-bottom:8px}
+.ttag{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--teal-bg);padding:3px 10px;border-radius:100px;margin-bottom:11px}
+.ttxt{font-size:12.5px;color:var(--txt2);line-height:1.7;margin-bottom:14px}
+.tauthor{display:flex;align-items:center;gap:10px}
+.tava{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.tname{font-size:13px;font-weight:700}
+.tage{font-size:11px;color:var(--txt2)}
+
+/* ── APPOINTMENT ── */
+.appt-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.appt-l .sub{margin-bottom:24px}
+.citems{display:flex;flex-direction:column;gap:11px}
+.ci{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:12px;background:var(--teal-s)}
+.ci-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.ci-t{background:var(--teal-bg)}
+.ci-r{background:#FDECEC}
+.ci-g{background:#F0F2F5}
+.ci-lbl{font-size:10.5px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px}
+.ci-val{font-size:13.5px;font-weight:700;color:var(--txt);margin-top:2px}
+.fcard{background:#fff;border:1px solid var(--bdr);border-radius:20px;padding:30px;box-shadow:var(--sh2)}
+.fcard h3{font-size:17px;font-weight:700;margin-bottom:18px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
+.fg label{font-size:11px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.5px}
+.fg input,.fg select,.fg textarea{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:500;color:var(--txt);padding:11px 13px;border:1.5px solid var(--bdr);border-radius:10px;outline:none;background:#fff;transition:border-color .2s;-webkit-appearance:none}
+.fg input::placeholder,.fg textarea::placeholder{color:#AABBBC}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal)}
+.fg textarea{resize:none;height:88px}
+.submit-btn{width:100%;background:var(--teal);color:#fff;font-family:'Quicksand',sans-serif;font-size:14.5px;font-weight:700;padding:13px;border:none;border-radius:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s}
+.submit-btn:hover{background:var(--teal-h);transform:translateY(-1px)}
+.submit-btn:disabled{background:#5BAB86;cursor:default;transform:none}
+.fnote{font-size:11px;color:var(--txt2);text-align:center;margin-top:9px}
+
+/* ── CTA BANNER ── */
+.cta-band{background:linear-gradient(120deg,var(--teal) 0%,#1FA9A1 100%);padding:44px 20px}
+.cta-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cta-in h3{font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff}
+.cta-in p{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:5px}
+.btn-wht{background:transparent;color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 26px;border-radius:10px;border:2px solid rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.btn-wht:hover{background:rgba(255,255,255,.14);border-color:#fff}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);padding:56px 20px 0}
+.foot-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.72;margin:12px 0 18px}
+.fsoc{display:flex;gap:9px}
+.fsoc a{width:34px;height:34px;background:rgba(255,255,255,.09);border-radius:9px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .2s,transform .2s}
+.fsoc a:hover{background:var(--teal);transform:translateY(-2px)}
+.fcol h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:16px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fcol ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:13px;font-weight:500;transition:color .18s}
+.fcol ul li a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.fci-ico{color:var(--teal);font-size:14px;flex-shrink:0;margin-top:1px}
+.fci span{font-size:12.5px;color:rgba(255,255,255,.58);line-height:1.55}
+.foot-bar{background:var(--dark2)}
+.foot-bot{max-width:1160px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.foot-bot span{font-size:11.5px;color:rgba(255,255,255,.32)}
+.foot-bot .heart{color:var(--teal)}
+
+/* ── FADE UP ── */
+.fu{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s ease}
+.fu.in{opacity:1;transform:none}
+.stg>.fu:nth-child(1){transition-delay:.00s}
+.stg>.fu:nth-child(2){transition-delay:.07s}
+.stg>.fu:nth-child(3){transition-delay:.14s}
+.stg>.fu:nth-child(4){transition-delay:.21s}
+.stg>.fu:nth-child(5){transition-delay:.28s}
+.stg>.fu:nth-child(6){transition-delay:.35s}
+.stg>.fu:nth-child(7){transition-delay:.42s}
+.stg>.fu:nth-child(8){transition-delay:.49s}
+.stg>.fu:nth-child(9){transition-delay:.56s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .why-grid,.treat-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-in{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-ul,.nav-btn{display:none}
+  .burger{display:flex}
+  .hero-in{grid-template-columns:1fr}
+  .hero-img-wrap{order:-1}
+  .hf1{top:12px;right:12px}
+  .hf2{bottom:12px;right:12px}
+  .about-in,.appt-in{grid-template-columns:1fr;gap:44px}
+  .test-grid{grid-template-columns:1fr}
+  .foot-in{grid-template-columns:1fr;gap:28px}
+  .cta-in{flex-direction:column;text-align:center}
+}
+@media(max-width:520px){
+  section{padding:56px 16px}
+  .hero{padding:44px 16px 56px}
+  .why-grid,.treat-grid{grid-template-columns:1fr}
+  .afacts{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:10px;align-items:flex-start}
+  .hst-sep{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-in">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.72.85 3.23 2.15 4.16C8.43 12.49 8 14.19 8 16c0 3.31 1.79 6 4 6s4-2.69 4-6c0-1.81-.43-3.51-1.15-4.84C16.15 10.23 17 8.72 17 7c0-2.76-2.24-5-5-5z"/></svg>
+      Sağlıklı gülüşler için buradayız
+    </span>
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      0500 123 45 67
+    </span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-shell" id="navShell">
+  <nav>
+    <a href="#" class="logo">
+      <div class="logo-ico">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg>
+      </div>
+      <div>
+        <div class="logo-name">Dr. Naime Kor</div>
+        <div class="logo-sub">Ağız ve Diş Sağlığı</div>
+      </div>
+    </a>
+    <ul class="nav-ul">
+      <li><a href="#anasayfa">Ana Sayfa</a></li>
+      <li><a href="#tedaviler">Tedaviler</a></li>
+      <li><a href="#hakkimizda">Hakkımızda</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+    <a href="#iletisim" class="nav-btn">Randevu Al</a>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mob-nav" id="mobNav">
+    <a href="#anasayfa">Ana Sayfa</a>
+    <a href="#tedaviler">Tedaviler</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#">Blog</a>
+    <a href="#iletisim">İletişim</a>
+    <a href="#iletisim">Randevu Al</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="anasayfa">
+  <div class="hero-in">
+    <div>
+      <div class="hero-rating">
+        <span class="hero-stars">★★★★★</span>
+        <span>5.0 Google Değerlendirme</span>
+      </div>
+      <h1>Sağlıklı Gülüşler,<br><span class="teal">Mutlu Hayatlar</span></h1>
+      <p class="hero-p">Modern diş hekimliği teknolojileri ile her yaştan hastamıza samimi ve güvenilir sağlık hizmeti sunuyoruz. Gülüşünüz bizim eserimiz.</p>
+      <div class="hero-tags">
+        <span class="htag"><span class="htag-check">✓</span> Ağrısız Tedavi</span>
+        <span class="htag"><span class="htag-check">✓</span> Modern Teknoloji</span>
+        <span class="htag"><span class="htag-check">✓</span> Güler Yüzlü Ekip</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#iletisim" class="btn-teal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Randevu Al
+        </a>
+        <a href="#tedaviler" class="btn-out">Tedavilerimiz</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hst-val">15+</div>
+          <div class="hst-lbl">Yıllık Deneyim</div>
+        </div>
+        <div class="hst-sep"></div>
+        <div>
+          <div class="hst-val">5000+</div>
+          <div class="hst-lbl">Mutlu Hasta</div>
+        </div>
+        <div class="hst-sep"></div>
+        <div>
+          <div class="hst-val">98%</div>
+          <div class="hst-lbl">Memnuniyet</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=580&q=82" alt="Diş hekimi hasta muayenesi">
+      <div class="hfloat hf1">
+        <div class="hf-ico">✨</div>
+        <div>
+          <div class="hf-t">Gülüş Tasarımı</div>
+          <div class="hf-s">Hayatınızdaki gülüşe kavuşun</div>
+        </div>
+      </div>
+      <div class="hfloat hf2">
+        <div class="hf-ico">🦷</div>
+        <div>
+          <div class="hf-t">Ağrısız Tedavi</div>
+          <div class="hf-s">Konforlu deneyim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus" id="nedenbiz">
+  <div class="wrap">
+    <div class="why-head fu">
+      <div class="badge">😊 Neden Biz?</div>
+      <h2 class="ttl">Farkımızı Hissedeceksiniz</h2>
+      <p class="sub">Klinik deneyiminizi mümkün olan en iyi hale getirmek için her ayrıntıyı özenle planladık.</p>
+    </div>
+    <div class="why-grid stg">
+      <div class="why-card fu"><div class="w-ico ico-o">⚡</div><h3>Modern Teknoloji</h3><p>3D görüntüleme, lazer tedavi ve dijital diş izi sistemleriyle en güncel tedavileri sunuyoruz.</p></div>
+      <div class="why-card fu"><div class="w-ico ico-t">🔵</div><h3>Hijyen Standartları</h3><p>Sterilizasyon protokollerimiz uluslararası standartları karşılar. Güvenliğiniz önceliğimiz.</p></div>
+      <div class="why-card fu"><div class="w-ico ico-t">😊</div><h3>Ağrısız Tedavi</h3><p>Gelişmiş anestezi yöntemleri sayesinde işlemleriniz sırasında ağrı hissetmezsiniz.</p></div>
+      <div class="why-card fu"><div class="w-ico ico-y">⏰</div><h3>Esnek Randevu</h3><p>Sabah erken ve akşam geç saatlerde randevu imkânıyla yoğun gündem planınıza uyum sağlarız.</p></div>
+      <div class="why-card fu"><div class="w-ico ico-b">👨‍⚕️</div><h3>Uzman Ekip</h3><p>Alanında deneyimli uzman diş hekimleri ve yardımcı personelimizle hizmetinizdeyiz.</p></div>
+      <div class="why-card fu"><div class="w-ico ico-p">❤️</div><h3>Sıcak Ortam</h3><p>Kaygılarınızı anlayan, sabırlı ve güler yüzlü bir ekiple kendinizi evde hissedeceksiniz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="tedaviler">
+  <div class="wrap">
+    <div class="treat-head fu">
+      <div class="badge">🦷 Tedavilerimiz</div>
+      <h2 class="ttl">Size Özel Diş Sağlığı Çözümleri</h2>
+      <p class="sub">En güncel tedavi yöntemleri ve deneyimli ekibimizle ağız ve diş sağlığınız için kapsamlı hizmetler sunuyoruz.</p>
+    </div>
+    <div class="treat-grid stg">
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=420&q=80" alt="İmplant"><div class="tc-badge">🦷</div></div>
+        <div class="tc-body"><h3>İmplant</h3><p>Eksik dişleriniz için kalıcı ve doğal görünümlü çözümler sunuyoruz.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d236?w=420&q=80" alt="Gülüş Tasarımı"><div class="tc-badge">✨</div></div>
+        <div class="tc-body"><h3>Gülüş Tasarımı</h3><p>Estetik ve işlevsel bir gülüş için kişiye özel tasarım planları.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=420&q=80" alt="Diş Beyazlatma"><div class="tc-badge">💎</div></div>
+        <div class="tc-body"><h3>Diş Beyazlatma</h3><p>Profesyonel beyazlatma sistemleri ile parlak ve beyaz bir gülüş.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=420&q=80" alt="Ortodonti"><div class="tc-badge">😁</div></div>
+        <div class="tc-body"><h3>Ortodonti</h3><p>Şeffaf plak ve tel tedavileri ile daha düzenli dişlere kavuşun.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=420&q=80" alt="Çocuk Diş Hekimliği"><div class="tc-badge">🧒</div></div>
+        <div class="tc-body"><h3>Çocuk Diş Hekimliği</h3><p>Minik hastalara özel, eğlenceli ve korkusuz diş deneyimi.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=420&q=80" alt="Protez Tedavileri"><div class="tc-badge">✅</div></div>
+        <div class="tc-body"><h3>Protez Tedavileri</h3><p>Sabit ve hareketli protez seçenekleriyle doğal görünüm ve işlev.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=420&q=80" alt="Kanal Tedavisi"><div class="tc-badge">⚡</div></div>
+        <div class="tc-body"><h3>Kanal Tedavisi</h3><p>Ağrısız kanal tedavisi ile dişinizi uzun yıllar koruyun.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=420&q=80" alt="Ağız ve Çene Cerrahisi"><div class="tc-badge">🔬</div></div>
+        <div class="tc-body"><h3>Ağız ve Çene Cerrahisi</h3><p>Gömülü dişler, çene sorunları ve çekim işlemleri için uzman bakım.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+      <div class="tc fu">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1585421514284-efce12b4ba74?w=420&q=80" alt="Periodontoloji"><div class="tc-badge">🌿</div></div>
+        <div class="tc-body"><h3>Periodontoloji</h3><p>Diş eti hastalıklarının teşhis ve tedavisi ile sağlıklı bir ağız.</p><a href="#iletisim" class="tc-link">Detaylı Bilgi →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="hakkimizda">
+  <div class="about-in">
+    <div class="about-img-w fu">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=480&q=82" alt="Dr. Naime Kor">
+      <div class="about-yr">
+        <div class="ayr-n">15+</div>
+        <div class="ayr-l">Yıllık Deneyim</div>
+      </div>
+    </div>
+    <div class="fu">
+      <div class="badge">🦷 Hakkımızda</div>
+      <h2 class="ttl">Dr. Naime Kor ile<br>Güvenli <span class="teal">Ellerde</span></h2>
+      <p class="sub">2010 yılından bu yana İstanbul'da faaliyet gösteren kliniğimizde, her hastamıza aile sıcaklığıyla yaklaşıyor, onların gülümsemelerini geri kazanmaları için elimizden gelenin en iyisini yapıyoruz.</p>
+      <p class="sub" style="margin-top:12px">Estetik diş hekimliği, implant ve ortodonti alanlarında edindiğim deneyimle, en modern tedavi yöntemlerini samimi bir yaklaşımla uyguluyorum. Çünkü inanıyorum ki sağlıklı bir gülüş, yaşam kalitesini doğrudan etkiler.</p>
+      <div class="afacts">
+        <div class="af"><div class="af-ico ico-t">🎓</div><div><div class="af-t">Akademik Geçmiş</div><div class="af-s">Hacettepe Üniversitesi Diş Hekimliği Fakültesi mezunu</div></div></div>
+        <div class="af"><div class="af-ico ico-y">⭐</div><div><div class="af-t">15+ Yıl Deneyim</div><div class="af-s">Estetik ve restoratif diş hekimliği alanında uzman</div></div></div>
+        <div class="af"><div class="af-ico ico-p">❤️</div><div><div class="af-t">Hasta Odaklı</div><div class="af-s">Her hastaya özel tedavi planı ve kişisel ilgi</div></div></div>
+        <div class="af"><div class="af-ico ico-o">😊</div><div><div class="af-t">5000+ Hasta</div><div class="af-s">Binlerce mutlu hastanın güvenilen hekimi</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="yorumlar">
+  <div class="wrap">
+    <div class="test-head fu">
+      <div class="badge">💬 Hasta Yorumları</div>
+      <h2 class="ttl">Mutlu Hastalarımız Anlatıyor</h2>
+      <p class="sub">Her yaştan binlerce hastamızın deneyimleri bizi güçlendiriyor.</p>
+    </div>
+    <div class="test-grid stg">
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">Gülüş Tasarımı</span>
+        <p class="ttxt">"Dr. Naime hanım gerçekten harika! Yıllardır çekindiğim gülüşümü artık özgürce paylaşıyorum. Hem çok ilgili hem de çok sabırlı bir hekim. Kliniğin atmosferi de çok sıcak."</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=5" alt="Ayşe Kaya"><div><div class="tname">Ayşe Kaya</div><div class="tage">34 yaşında</div></div></div>
+      </div>
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">İmplant Tedavisi</span>
+        <p class="ttxt">"İmplant konusunda çok tedirgin ve kararsızdım. Dr. Naime beni bilgilendirerek güven verdi. Sonuç mükemmel, artık rahatça yemek yiyebiliyorum."</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=12" alt="Mehmet Demir"><div><div class="tname">Mehmet Demir</div><div class="tage">52 yaşında</div></div></div>
+      </div>
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">Diş Teli</span>
+        <p class="ttxt">"Çocuğumu çocuk diş hekimliği için getirdim, kendim de ortodonti tedavisi oldum. İkimiz için de harika bir deneyimdi. Minikler için özel ilgi gerçekten fark yaratıyor."</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=9" alt="Zeynep Arslan"><div><div class="tname">Zeynep Arslan</div><div class="tage">28 yaşında</div></div></div>
+      </div>
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">Diş Beyazlatma</span>
+        <p class="ttxt">"Beyazlatma işleminden çok memnun kaldım. Sonuçlar beklentimin çok üzerindeydi. Personel de son derece güler yüzlü ve yardımsever. Herkese tavsiye ederim."</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=15" alt="Hasan Yıldız"><div><div class="tname">Hasan Yıldız</div><div class="tage">45 yaşında</div></div></div>
+      </div>
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">Protez Tedavisi</span>
+        <p class="ttxt">"Yaşım nedeniyle çok korkuyordum ama Dr. Naime hanım o kadar anlayışlı davrandı ki hiç zorluk çekmedim. Protezlerim tamamen doğal görünüyor, çok mutluyum."</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=3" alt="Elif Şahin"><div><div class="tname">Elif Şahin</div><div class="tage">67 yaşında</div></div></div>
+      </div>
+      <div class="tcard fu">
+        <div class="tq">"</div>
+        <div class="tstars">★★★★★</div>
+        <span class="ttag">Çocuk Diş Hekimliği</span>
+        <p class="ttxt">"Annem anlattı: Dişçiye gitmeyi sevmiyordum ama burada çok eğlendim! Dr. Naime hanım bana oyuncak verdi ve hiç acı olmadı. Artık dişçiye gitmek istiyorum!"</p>
+        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=44" alt="Can Öztürk"><div><div class="tname">Can Öztürk</div><div class="tage">9 yaşında</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="iletisim" style="background:var(--teal-s)">
+  <div class="appt-in">
+    <div class="appt-l fu">
+      <div class="badge">📅 Randevu Al</div>
+      <h2 class="ttl">Sağlıklı Gülüşe<br><span class="teal">İlk Adımı</span> Atın</h2>
+      <p class="sub" style="margin-bottom:24px">Online form ile veya telefon ile randevu alabilirsiniz. En kısa sürede sizi arayıp uygun zamanı belirleyeceğiz.</p>
+      <div class="citems">
+        <div class="ci">
+          <div class="ci-ico ci-t">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div><div class="ci-lbl">Telefon</div><div class="ci-val">0500 123 45 67</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico ci-r">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E07070" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="ci-lbl">Adres</div><div class="ci-val">Bağcılar Mah. Sağlık Cad. No:12, İstanbul</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico ci-g">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8899AA" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div><div class="ci-lbl">Çalışma Saatleri</div><div class="ci-val">Pzt – Cmt: 09:00 – 19:00</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="fu">
+      <div class="fcard">
+        <h3>Randevu Formu</h3>
+        <form id="apptForm">
+          <div class="fg"><label>Ad Soyad</label><input type="text" placeholder="Adınızı girin" required></div>
+          <div class="fg"><label>Telefon</label><input type="tel" placeholder="05XX XXX XX XX" required></div>
+          <div class="fg">
+            <label>Tedavi Türü</label>
+            <select required>
+              <option value="">Tedavi seçin</option>
+              <option>İmplant</option>
+              <option>Gülüş Tasarımı</option>
+              <option>Diş Beyazlatma</option>
+              <option>Ortodonti</option>
+              <option>Çocuk Diş Hekimliği</option>
+              <option>Protez Tedavileri</option>
+              <option>Kanal Tedavisi</option>
+              <option>Ağız ve Çene Cerrahisi</option>
+              <option>Periodontoloji</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="fg"><label>Not (İsteğe bağlı)</label><textarea placeholder="Şikayetinizi veya notunuzu yazın…"></textarea></div>
+          <button type="submit" class="submit-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Randevu Talebi Gönder
+          </button>
+          <p class="fnote">Bilgileriniz gizli tutulur ve yalnızca randevu için kullanılır.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-in">
+    <div>
+      <h3>Sağlıklı gülüşünüze bir adım kaldı.</h3>
+      <p>Hemen randevu alın, ilk muayene ücretsiz!</p>
+    </div>
+    <a href="#iletisim" class="btn-wht">Randevu Al</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo">
+        <a href="#" class="logo">
+          <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+          <div><div class="logo-name" style="color:#fff">Dr. Naime Kor</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
+        </a>
+      </div>
+      <p class="foot-desc">2010'dan bu yana güvenilir, samimi ve modern diş sağlığı hizmetleri sunuyoruz.</p>
+      <div class="fsoc">
+        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Hızlı Erişim</h4>
+      <ul>
+        <li><a href="#anasayfa">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#tedaviler">Tedaviler</a></li>
+        <li><a href="#yorumlar">Hasta Yorumları</a></li>
+        <li><a href="#iletisim">Randevu Al</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Tedavilerimiz</h4>
+      <ul>
+        <li><a href="#tedaviler">İmplant</a></li>
+        <li><a href="#tedaviler">Gülüş Tasarımı</a></li>
+        <li><a href="#tedaviler">Diş Beyazlatma</a></li>
+        <li><a href="#tedaviler">Ortodonti</a></li>
+        <li><a href="#tedaviler">Çocuk Diş Hekimliği</a></li>
+        <li><a href="#tedaviler">Protez Tedavileri</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>İletişim</h4>
+      <div class="fci"><span class="fci-ico">📞</span><span>0500 123 45 67</span></div>
+      <div class="fci"><span class="fci-ico">📍</span><span>Bağcılar Mah. Sağlık Cad. No:12, İstanbul</span></div>
+      <div class="fci"><span class="fci-ico">🕐</span><span>Pzt – Cmt<br>09:00 – 19:00</span></div>
+    </div>
+  </div>
+</footer>
+<div class="foot-bar">
+  <div class="foot-bot">
+    <span>© 2024 Dr. Naime Kor Ağız ve Diş Sağlığı. Tüm hakları saklıdır.</span>
+    <span>Sevgiyle tasarlandı <span class="heart">♡</span></span>
+  </div>
+</div>
+
+<script>
+const burger = document.getElementById('burger');
+const mobNav = document.getElementById('mobNav');
+burger.addEventListener('click', () => {
+  const open = mobNav.classList.toggle('open');
+  burger.classList.toggle('open', open);
+});
+mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobNav.classList.remove('open');
+  burger.classList.remove('open');
+}));
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+document.getElementById('apptForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.innerHTML = '✓ Talebiniz alındı!';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Randevu Talebi Gönder';
+    btn.disabled = false;
+    e.target.reset();
+  }, 3500);
+});
+</script>
+</body>
+</html>
