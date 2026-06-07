@@ -7,127 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --teal:    #2E86DE;
-  --lilac:   #F97316;
-  --lilac-h: #EA6B0A;
-  --teal-h:  #2577CC;
-  --teal-bg: #EBF4FD;
-  --teal-s:  #F0F6FD;
-  --dark:    #1C2B38;
-  --dark2:   #131E28;
-  --txt:     #1C2B38;
-  --txt2:    #6E808D;
-  --bdr:     #E5ECED;
-  --sh:      0 2px 16px rgba(0,0,0,.07);
-  --sh2:     0 8px 32px rgba(0,0,0,.11);
-  --r:       12px;
-  --r2:      16px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Quicksand',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
-.topbar{background:var(--teal);padding:9px 20px}
-.topbar-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.topbar-left{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
-.topbar-phone{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;white-space:nowrap}
-.nav-shell{background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:900}
-nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-ico{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-name{font-size:15px;font-weight:700;color:var(--txt);line-height:1.25}
-.logo-sub{font-size:11px;font-weight:500;color:var(--txt2)}
-.nav-ul{display:flex;gap:2px;list-style:none;align-items:center}
-.nav-ul>li>a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px;transition:color .18s,background .18s;display:flex;align-items:center;gap:3px}
-.nav-ul>li>a:hover,.nav-ul>li>a.active{color:var(--teal);background:var(--teal-bg)}
-.nav-dd{position:relative}
-.nav-dd>a::after{content:'▾';font-size:10px;opacity:.55}
-.nav-dd-menu{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:7px;min-width:210px;box-shadow:var(--sh2);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s;z-index:100}
-.nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-dd-menu a{display:block;color:var(--txt2);text-decoration:none;font-size:13px;font-weight:600;padding:9px 12px;border-radius:8px;transition:color .15s,background .15s}
-.nav-dd-menu a:hover{color:var(--teal);background:var(--teal-bg)}
-.nav-btn{background:var(--lilac);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:10px 20px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s}
-.nav-btn:hover{background:var(--lilac-h);transform:translateY(-1px)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.burger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--bdr);padding:4px 20px 20px}
-.mob-nav.open{display:flex}
-.mob-nav>a{color:var(--txt2);text-decoration:none;font-size:15px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--bdr)}
-.mob-nav>a:last-child{color:var(--teal);border:none}
-.mob-sub{display:flex;flex-direction:column;padding:4px 0 4px 16px;border-bottom:1px solid var(--bdr)}
-.mob-sub a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 0;border:none}
-.page-hero{background:linear-gradient(135deg,#1C2B38 0%,#2E4055 50%,#2E86DE 100%);padding:64px 20px;text-align:center;color:#fff}
-.page-hero .badge{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.25);display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
-.page-hero h1{font-size:clamp(28px,4vw,46px);font-weight:700;margin-bottom:12px}
-.page-hero p{font-size:15px;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto 24px;line-height:1.7}
-.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.5)}
-.breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none}
-.breadcrumb a:hover{color:#fff}
-.toc-wrap{background:var(--teal-s);padding:24px 20px;border-bottom:1px solid var(--bdr)}
-.toc-in{max-width:1160px;margin:0 auto}
-.toc-in h3{font-size:12px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
-.toc-grid{display:flex;flex-wrap:wrap;gap:8px}
-.toc-link{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--txt2);text-decoration:none;background:#fff;border:1px solid var(--bdr);padding:7px 13px;border-radius:100px;transition:color .18s,border-color .18s,background .18s}
-.toc-link:hover{color:var(--teal);border-color:var(--teal);background:var(--teal-bg)}
-.content{max-width:1160px;margin:0 auto}
-.treat-section{display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:start;padding:72px 20px;border-bottom:1px solid var(--bdr)}
-.treat-section:last-child{border-bottom:none}
-.treat-section:nth-child(even){grid-template-columns:2fr 1fr}
-.treat-section:nth-child(even) .ts-img{order:2}
-.treat-section:nth-child(even) .ts-body{order:1}
-.ts-img img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:4/3;object-fit:cover}
-.ts-ico{width:52px;height:52px;border-radius:14px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
-.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-bg);color:var(--teal);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
-.ts-body h2{font-size:clamp(22px,2.4vw,30px);font-weight:700;margin-bottom:12px;line-height:1.25}
-.ts-body p{font-size:14.5px;color:var(--txt2);line-height:1.75;margin-bottom:16px}
-.ts-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
-.ts-list li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--txt2)}
-.ts-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
-.ts-cta{display:inline-flex;align-items:center;gap:7px;background:var(--lilac);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s}
-.ts-cta:hover{background:var(--lilac-h);transform:translateY(-1px)}
-.result-box{background:linear-gradient(135deg,var(--teal-bg) 0%,#fff 100%);border:1px solid var(--bdr);border-radius:var(--r2);padding:18px 20px;margin-bottom:20px}
-.result-box p{font-size:13px;color:var(--txt);line-height:1.65;margin:0}
-.result-box strong{color:var(--teal)}
-.cta-band{background:linear-gradient(120deg,var(--teal) 0%,#1A6FC4 100%);padding:44px 20px}
-.cta-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.cta-in h3{font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff}
-.cta-in p{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:5px}
-.btn-wht{background:transparent;color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 26px;border-radius:10px;border:2px solid rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
-.btn-wht:hover{background:rgba(255,255,255,.14);border-color:#fff}
-footer{background:var(--dark);padding:40px 20px 0}
-.foot-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
-.foot-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.72;margin:12px 0}
-.fcol h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:16px}
-.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.fcol ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:13px;font-weight:500;transition:color .18s}
-.fcol ul li a:hover{color:#fff}
-.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.fci-ico{color:var(--teal);font-size:14px;flex-shrink:0;margin-top:1px}
-.fci span{font-size:12.5px;color:rgba(255,255,255,.58);line-height:1.55}
-.foot-bar{background:var(--dark2)}
-.foot-bot{max-width:1160px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.foot-bot span{font-size:11.5px;color:rgba(255,255,255,.32)}
-.foot-bot .heart{color:var(--teal)}
-.fu{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s ease}
-.fu.in{opacity:1;transform:none}
-@media(max-width:768px){
-  .nav-ul,.nav-btn{display:none}
-  .burger{display:flex}
-  .treat-section,.treat-section:nth-child(even){grid-template-columns:1fr;gap:32px}
-  .treat-section:nth-child(even) .ts-img,.treat-section:nth-child(even) .ts-body{order:unset}
-  .foot-in{grid-template-columns:1fr;gap:28px}
-  .cta-in{flex-direction:column;text-align:center}
-}
-@media(max-width:520px){
-  .topbar-left{display:none}
-  .treat-section{padding:48px 16px}
-  .toc-wrap{padding:20px 16px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
 </head>
 <body>
 
@@ -147,7 +30,7 @@ footer{background:var(--dark);padding:40px 20px 0}
 <div class="nav-shell">
   <nav>
     <a href="index.html" class="logo">
-      <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+      <div class="logo-ico"><img src="images/logo-icon.png" alt="Logo"></div>
       <div><div class="logo-name">Dt. Naime Altuntaş</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
     </a>
     <ul class="nav-ul">
@@ -209,7 +92,7 @@ footer{background:var(--dark);padding:40px 20px 0}
   <!-- PORSELEN LAMİNALAR -->
   <div class="treat-section fu" id="porselen-laminalar">
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=82" alt="Porselen Laminalar">
+      <img src="images/photo-1571772996211-2f02c9727629.jpg" alt="Porselen Laminalar">
     </div>
     <div class="ts-body">
       <h2>Porselen Laminalar</h2>
@@ -241,14 +124,14 @@ footer{background:var(--dark);padding:40px 20px 0}
       <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
     </div>
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d236?w=600&q=82" alt="Zirkonyum Porselen">
+      <img src="images/photo-1607962837359-5e7e89f86776.jpg" alt="Zirkonyum Porselen">
     </div>
   </div>
 
   <!-- DİŞ BEYAZLATMA -->
   <div class="treat-section fu" id="dis-beyazlatma">
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=82" alt="Diş Beyazlatma">
+      <img src="images/photo-1612349317150-e413f6a5b16d.jpg" alt="Diş Beyazlatma">
     </div>
     <div class="ts-body">
       <h2>Diş Beyazlatma</h2>
@@ -280,14 +163,14 @@ footer{background:var(--dark);padding:40px 20px 0}
       <a href="index.html#iletisim" class="ts-cta">Randevu Al →</a>
     </div>
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=82" alt="Estetik Dolgu">
+      <img src="images/photo-1609840114035-3c981b782dfe.jpg" alt="Estetik Dolgu">
     </div>
   </div>
 
   <!-- DİŞETİ ESTETİĞİ -->
   <div class="treat-section fu" id="diseti-estetigi">
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1585421514284-efce12b4ba74?w=600&q=82" alt="Dişeti Estetiği">
+      <img src="images/photo-1607990283143-e81e7a2c9349.jpg" alt="Dişeti Estetiği">
     </div>
     <div class="ts-body">
       <h2>Dişeti Estetiği</h2>
@@ -319,7 +202,7 @@ footer{background:var(--dark);padding:40px 20px 0}
       <a href="index.html#iletisim" class="ts-cta">Ortodonti Değerlendirmesi →</a>
     </div>
     <div class="ts-img">
-      <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=82" alt="Ortodonti">
+      <img src="images/photo-1607619056574-7b8d3ee536b2.jpg" alt="Ortodonti">
     </div>
   </div>
 
@@ -339,7 +222,7 @@ footer{background:var(--dark);padding:40px 20px 0}
   <div class="foot-in">
     <div>
       <a href="index.html" class="logo">
-        <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+        <div class="logo-ico"><img src="images/logo-icon.png" alt="Logo"></div>
         <div><div class="logo-name" style="color:#fff">Dt. Naime Altuntaş</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
       </a>
       <p class="foot-desc">1991'den bu yana güvenilir, samimi ve modern diş sağlığı hizmetleri sunuyoruz.</p>
@@ -352,6 +235,16 @@ footer{background:var(--dark);padding:40px 20px 0}
         <li><a href="agiz-dis-sagligi.html">Ağız ve Diş Sağlığı</a></li>
         <li><a href="dis-estetigi.html">Diş Estetiği</a></li>
         <li><a href="index.html#iletisim">Randevu Al</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Tedavilerimiz</h4>
+      <ul>
+        <li><a href="tedaviler.html#implant">İmplant</a></li>
+        <li><a href="tedaviler.html#ortodonti">Ortodonti</a></li>
+        <li><a href="tedaviler.html#protezler">Protezler</a></li>
+        <li><a href="dis-estetigi.html#dis-beyazlatma">Diş Beyazlatma</a></li>
+        <li><a href="agiz-dis-sagligi.html">Ağız Sağlığı</a></li>
       </ul>
     </div>
     <div class="fcol">

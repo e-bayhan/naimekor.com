@@ -7,258 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --teal:    #2E86DE;
-  --lilac:   #F97316;
-  --lilac-h: #EA6B0A;
-  --teal-h:  #2577CC;
-  --teal-bg: #EBF4FD;
-  --teal-s:  #F0F6FD;
-  --dark:    #1C2B38;
-  --dark2:   #131E28;
-  --txt:     #1C2B38;
-  --txt2:    #6E808D;
-  --white:   #fff;
-  --gold:    #F5A623;
-  --bdr:     #E5ECED;
-  --sh:      0 2px 16px rgba(0,0,0,.07);
-  --sh2:     0 8px 32px rgba(0,0,0,.11);
-  --r:       12px;
-  --r2:      16px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Quicksand',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
-
-/* ── TOP BAR ── */
-.topbar{background:var(--teal);padding:9px 20px}
-.topbar-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.topbar-left{font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
-.topbar-phone{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;white-space:nowrap}
-
-/* ── NAV ── */
-.nav-shell{background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.07);position:sticky;top:0;z-index:900}
-nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-ico{width:38px;height:38px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-name{font-size:15px;font-weight:700;color:var(--txt);line-height:1.25}
-.logo-sub{font-size:11px;font-weight:500;color:var(--txt2)}
-.nav-ul{display:flex;gap:2px;list-style:none;align-items:center}
-.nav-ul>li>a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px;transition:color .18s,background .18s;display:flex;align-items:center;gap:3px}
-.nav-ul>li>a:hover{color:var(--txt);background:#f4f5f6}
-/* Dropdown */
-.nav-dd{position:relative}
-.nav-dd>a::after{content:'▾';font-size:10px;opacity:.55}
-.nav-dd-menu{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--bdr);border-radius:var(--r);padding:7px;min-width:210px;box-shadow:var(--sh2);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .2s;z-index:100}
-.nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-dd-menu a{display:block;color:var(--txt2);text-decoration:none;font-size:13px;font-weight:600;padding:9px 12px;border-radius:8px;transition:color .15s,background .15s}
-.nav-dd-menu a:hover{color:var(--teal);background:var(--teal-bg)}
-.nav-btn{background:var(--lilac);color:#fff;font-family:'Quicksand',sans-serif;font-size:13.5px;font-weight:700;padding:10px 20px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s}
-.nav-btn:hover{background:var(--lilac-h);transform:translateY(-1px)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.burger span{display:block;width:22px;height:2px;background:var(--txt);border-radius:2px;transition:all .3s}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--bdr);padding:4px 20px 20px}
-.mob-nav.open{display:flex}
-.mob-nav>a{color:var(--txt2);text-decoration:none;font-size:15px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--bdr)}
-.mob-nav>a:last-child{color:var(--teal);border:none}
-.mob-sub{display:flex;flex-direction:column;padding:4px 0 4px 16px;border-bottom:1px solid var(--bdr)}
-.mob-sub a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 0;border:none}
-
-/* ── SHARED ── */
-.wrap{max-width:1160px;margin:0 auto}
-section{padding:80px 20px}
-.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-bg);color:var(--teal);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
-.ttl{font-size:clamp(24px,2.8vw,36px);font-weight:700;line-height:1.25;margin-bottom:12px}
-.sub{font-size:14.5px;color:var(--txt2);line-height:1.75}
-.teal{color:var(--lilac)}
-
-/* ── HERO ── */
-.hero{padding:60px 20px 72px}
-.hero-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-rating{display:inline-flex;align-items:center;gap:8px;background:#FFF9ED;border:1px solid #FFE4A0;padding:6px 13px;border-radius:100px;margin-bottom:22px}
-.hero-stars{color:var(--gold);font-size:13px;letter-spacing:1px}
-.hero-rating span{font-size:12.5px;font-weight:700;color:#946C10}
-.hero h1{font-size:clamp(28px,3.6vw,50px);font-weight:700;line-height:1.2;margin-bottom:16px}
-.hero-p{font-size:14.5px;color:var(--txt2);line-height:1.75;margin-bottom:22px;max-width:430px}
-.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
-.htag{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--txt2);background:#F5F7F8;border:1px solid var(--bdr);padding:6px 12px;border-radius:100px}
-.htag-check{color:var(--teal);font-weight:700}
-.hero-btns{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:36px}
-.btn-teal{background:var(--lilac);color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:10px;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:7px;cursor:pointer;transition:background .2s,transform .15s}
-.btn-teal:hover{background:var(--lilac-h);transform:translateY(-1px)}
-.btn-out{background:transparent;color:var(--txt);font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:10px;border:2px solid var(--bdr);text-decoration:none;display:inline-flex;align-items:center;gap:7px;cursor:pointer;transition:border-color .2s,color .2s}
-.btn-out:hover{border-color:var(--lilac);color:var(--lilac)}
-.hero-stats{display:flex;align-items:center;gap:28px}
-.hst-val{font-size:26px;font-weight:700;line-height:1}
-.hst-lbl{font-size:11.5px;color:var(--txt2);margin-top:3px;font-weight:500}
-.hst-sep{width:1px;height:36px;background:var(--bdr);flex-shrink:0}
-.hero-img-wrap{position:relative}
-.hero-img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:16/15;object-fit:cover}
-.hfloat{position:absolute;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:12px;padding:11px 15px;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;align-items:center;gap:10px;min-width:180px}
-.hf1{top:18px;right:-14px}
-.hf2{bottom:18px;right:18px}
-.hf-ico{width:34px;height:34px;background:var(--teal-bg);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.hf-t{font-size:12.5px;font-weight:700;color:var(--txt)}
-.hf-s{font-size:11px;color:var(--txt2);margin-top:1px}
-
-/* ── WHY US ── */
-.whyus{background:var(--teal-s)}
-.why-head{text-align:center;margin-bottom:48px}
-.why-head .sub{max-width:480px;margin:0 auto}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.why-card{background:#fff;border-radius:var(--r2);padding:26px 22px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
-.why-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
-.w-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px}
-.ico-o{background:#FFF3E0}
-.ico-t{background:#E0F7F5}
-.ico-p{background:#FDE8EC}
-.ico-y{background:#FFF8E1}
-.ico-b{background:#E3F2FD}
-.why-card h3{font-size:15px;font-weight:700;margin-bottom:7px}
-.why-card p{font-size:13px;color:var(--txt2);line-height:1.65}
-
-/* ── CAROUSEL SECTIONS ── */
-.sec-head{text-align:center;margin-bottom:36px}
-.sec-head .sub{max-width:520px;margin:0 auto}
-.carousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 18px}
-.carousel::-webkit-scrollbar{display:none}
-.car-card{flex:0 0 calc(33.33% - 11px);scroll-snap-align:start;background:#fff;border-radius:var(--r2);border:1px solid var(--bdr);box-shadow:var(--sh);padding:22px 20px 20px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s}
-.car-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
-.car-ico{width:46px;height:46px;border-radius:12px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.car-card h3{font-size:15px;font-weight:700;color:var(--txt);margin:0}
-.car-card p{font-size:12.5px;color:var(--txt2);line-height:1.62;flex:1;margin:0}
-.car-link{font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s;margin-top:4px}
-.car-link:hover{gap:8px}
-.sec-more{text-align:center;margin-top:16px}
-.sec-more a{font-size:13.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:10px 22px;border:2px solid var(--teal-bg);border-radius:10px;background:var(--teal-bg);transition:background .2s,border-color .2s}
-.sec-more a:hover{background:var(--lilac);border-color:var(--lilac);color:#fff}
-
-/* ── ABOUT ── */
-.about{background:var(--teal-s)}
-.about-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.about-img-w{position:relative}
-.about-img-w img{width:100%;border-radius:20px;display:block;box-shadow:var(--sh2);aspect-ratio:4/4;object-fit:cover;object-position:top}
-.about-yr{position:absolute;bottom:20px;left:20px;background:rgba(255,255,255,.95);border-radius:14px;padding:14px 18px;box-shadow:0 4px 20px rgba(0,0,0,.11)}
-.ayr-n{font-size:26px;font-weight:700;color:var(--txt);line-height:1}
-.ayr-l{font-size:12px;font-weight:600;color:var(--txt2);margin-top:3px}
-.about-txt .sub{margin-bottom:14px}
-.afacts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-.af{background:#fff;border-radius:var(--r);padding:13px 15px;display:flex;align-items:flex-start;gap:10px;box-shadow:var(--sh)}
-.af-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.af-t{font-size:13px;font-weight:700;margin-bottom:2px}
-.af-s{font-size:11.5px;color:var(--txt2)}
-
-/* ── TESTIMONIALS ── */
-.test-head{text-align:center;margin-bottom:44px}
-.test-head .sub{max-width:480px;margin:0 auto}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.tcard{background:#fff;border:1px solid var(--bdr);border-radius:var(--r2);padding:22px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
-.tcard:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
-.tq{font-size:40px;font-weight:900;color:var(--teal);line-height:.75;opacity:.4;font-family:serif;margin-bottom:6px}
-.tstars{color:var(--gold);font-size:13px;letter-spacing:1px;margin-bottom:8px}
-.ttag{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--teal-bg);padding:3px 10px;border-radius:100px;margin-bottom:11px}
-.ttxt{font-size:12.5px;color:var(--txt2);line-height:1.7;margin-bottom:14px}
-.tauthor{display:flex;align-items:center;gap:10px}
-.tava{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.tname{font-size:13px;font-weight:700}
-.tage{font-size:11px;color:var(--txt2)}
-
-/* ── APPOINTMENT ── */
-.appt-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
-.appt-l .sub{margin-bottom:24px}
-.citems{display:flex;flex-direction:column;gap:11px}
-.ci{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:12px;background:var(--teal-s)}
-.ci-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.ci-t{background:var(--teal-bg)}
-.ci-r{background:#FDECEC}
-.ci-g{background:#F0F2F5}
-.ci-lbl{font-size:10.5px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px}
-.ci-val{font-size:13.5px;font-weight:700;color:var(--txt);margin-top:2px}
-.fcard{background:#fff;border:1px solid var(--bdr);border-radius:20px;padding:30px;box-shadow:var(--sh2)}
-.fcard h3{font-size:17px;font-weight:700;margin-bottom:18px}
-.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
-.fg label{font-size:11px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.5px}
-.fg input,.fg select,.fg textarea{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:500;color:var(--txt);padding:11px 13px;border:1.5px solid var(--bdr);border-radius:10px;outline:none;background:#fff;transition:border-color .2s;-webkit-appearance:none}
-.fg input::placeholder,.fg textarea::placeholder{color:#AABBBC}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal)}
-.fg textarea{resize:none;height:88px}
-.submit-btn{width:100%;background:var(--lilac);color:#fff;font-family:'Quicksand',sans-serif;font-size:14.5px;font-weight:700;padding:13px;border:none;border-radius:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s}
-.submit-btn:hover{background:var(--lilac-h);transform:translateY(-1px)}
-.submit-btn:disabled{background:#AACEF5;cursor:default;transform:none}
-.fnote{font-size:11px;color:var(--txt2);text-align:center;margin-top:9px}
-
-/* ── CTA BANNER ── */
-.cta-band{background:linear-gradient(120deg,var(--teal) 0%,#1A6FC4 100%);padding:44px 20px}
-.cta-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.cta-in h3{font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff}
-.cta-in p{font-size:13.5px;color:rgba(255,255,255,.82);margin-top:5px}
-.btn-wht{background:transparent;color:#fff;font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;padding:12px 26px;border-radius:10px;border:2px solid rgba(255,255,255,.7);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
-.btn-wht:hover{background:rgba(255,255,255,.14);border-color:#fff}
-
-/* ── FOOTER ── */
-footer{background:var(--dark);padding:56px 20px 0}
-.foot-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
-.foot-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.72;margin:12px 0 18px}
-.fsoc{display:flex;gap:9px}
-.fsoc a{width:34px;height:34px;background:rgba(255,255,255,.09);border-radius:9px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .2s,transform .2s}
-.fsoc a:hover{background:var(--teal);transform:translateY(-2px)}
-.fcol h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:16px}
-.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.fcol ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:13px;font-weight:500;transition:color .18s}
-.fcol ul li a:hover{color:#fff}
-.fci{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.fci-ico{color:var(--teal);font-size:14px;flex-shrink:0;margin-top:1px}
-.fci span{font-size:12.5px;color:rgba(255,255,255,.58);line-height:1.55}
-.foot-bar{background:var(--dark2)}
-.foot-bot{max-width:1160px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.foot-bot span{font-size:11.5px;color:rgba(255,255,255,.32)}
-.foot-bot .heart{color:var(--teal)}
-
-/* ── FADE UP ── */
-.fu{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s ease}
-.fu.in{opacity:1;transform:none}
-.stg>.fu:nth-child(1){transition-delay:.00s}
-.stg>.fu:nth-child(2){transition-delay:.07s}
-.stg>.fu:nth-child(3){transition-delay:.14s}
-.stg>.fu:nth-child(4){transition-delay:.21s}
-.stg>.fu:nth-child(5){transition-delay:.28s}
-.stg>.fu:nth-child(6){transition-delay:.35s}
-.stg>.fu:nth-child(7){transition-delay:.42s}
-.stg>.fu:nth-child(8){transition-delay:.49s}
-.stg>.fu:nth-child(9){transition-delay:.56s}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .why-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
-  .car-card{flex:0 0 calc(50% - 8px)}
-  .foot-in{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-  .nav-ul,.nav-btn{display:none}
-  .burger{display:flex}
-  .hero-in{grid-template-columns:1fr}
-  .hero-img-wrap{order:-1}
-  .hf1{top:12px;right:12px}
-  .hf2{bottom:12px;right:12px}
-  .about-in,.appt-in{grid-template-columns:1fr;gap:44px}
-  .test-grid{grid-template-columns:1fr}
-  .foot-in{grid-template-columns:1fr;gap:28px}
-  .cta-in{flex-direction:column;text-align:center}
-  .car-card{flex:0 0 calc(80% - 8px)}
-}
-@media(max-width:520px){
-  section{padding:56px 16px}
-  .hero{padding:44px 16px 56px}
-  .why-grid{grid-template-columns:1fr}
-  .afacts{grid-template-columns:1fr}
-  .car-card{flex:0 0 calc(85% - 8px)}
-  .topbar-left{display:none}
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
 </head>
 <body>
 
@@ -280,9 +32,7 @@ footer{background:var(--dark);padding:56px 20px 0}
 <div class="nav-shell" id="navShell">
   <nav>
     <a href="index.html" class="logo">
-      <div class="logo-ico">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg>
-      </div>
+      <div class="logo-ico"><img src="images/logo-icon.png" alt="Logo"></div>
       <div>
         <div class="logo-name">Dt. Naime Altuntaş</div>
         <div class="logo-sub">Ağız ve Diş Sağlığı</div>
@@ -322,10 +72,6 @@ footer{background:var(--dark);padding:56px 20px 0}
 <section class="hero" id="anasayfa">
   <div class="hero-in">
     <div>
-      <div class="hero-rating">
-        <span class="hero-stars">★★★★★</span>
-        <span>5.0 Google Değerlendirme</span>
-      </div>
       <h1>Sağlıklı Gülüşler,<br><span class="teal">Mutlu Hayatlar</span></h1>
       <p class="hero-p">Modern diş hekimliği teknolojileri ile her yaştan hastamıza samimi ve güvenilir sağlık hizmeti sunuyoruz. Gülüşünüz bizim eserimiz.</p>
       <div class="hero-tags">
@@ -358,7 +104,7 @@ footer{background:var(--dark);padding:56px 20px 0}
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img class="hero-img" src="https://images.unsplash.com/photo-1588099247923-e67cf4cde498?w=580&q=82" alt="Her yaştan mutlu hastalar">
+      <img class="hero-img" src="images/photo-1571019613454-1cb2f99b2d8b.jpg" alt="Her yaştan mutlu gülüşler">
       <div class="hfloat hf1">
         <div class="hf-ico">✨</div>
         <div>
@@ -377,103 +123,11 @@ footer{background:var(--dark);padding:56px 20px 0}
   </div>
 </section>
 
-<!-- WHY US -->
-<section class="whyus" id="nedenbiz">
-  <div class="wrap">
-    <div class="why-head fu">
-      <div class="badge">😊 Neden Biz?</div>
-      <h2 class="ttl">Farkımızı Hissedeceksiniz</h2>
-      <p class="sub">Klinik deneyiminizi mümkün olan en iyi hale getirmek için her ayrıntıyı özenle planladık.</p>
-    </div>
-    <div class="why-grid stg">
-      <div class="why-card fu"><div class="w-ico ico-o">⚡</div><h3>Modern Teknoloji</h3><p>3D görüntüleme, lazer tedavi ve dijital diş izi sistemleriyle en güncel tedavileri sunuyoruz.</p></div>
-      <div class="why-card fu"><div class="w-ico ico-t">🔵</div><h3>Hijyen Standartları</h3><p>Sterilizasyon protokollerimiz uluslararası standartları karşılar. Güvenliğiniz önceliğimiz.</p></div>
-      <div class="why-card fu"><div class="w-ico ico-t">😊</div><h3>Ağrısız Tedavi</h3><p>Gelişmiş anestezi yöntemleri sayesinde işlemleriniz sırasında ağrı hissetmezsiniz.</p></div>
-      <div class="why-card fu"><div class="w-ico ico-y">⏰</div><h3>Esnek Randevu</h3><p>Sabah erken ve akşam geç saatlerde randevu imkânıyla yoğun gündem planınıza uyum sağlarız.</p></div>
-      <div class="why-card fu"><div class="w-ico ico-b">👨‍⚕️</div><h3>Uzman Hekim</h3><p>Alanında 30+ yıl deneyimli uzman diş hekimi ve yardımcı personelimizle hizmetinizdeyiz.</p></div>
-      <div class="why-card fu"><div class="w-ico ico-p">❤️</div><h3>Sıcak Ortam</h3><p>Kaygılarınızı anlayan, sabırlı ve güler yüzlü bir ekiple kendinizi evde hissedeceksiniz.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TREATMENTS CAROUSEL -->
-<section id="tedaviler">
-  <div class="wrap">
-    <div class="sec-head fu">
-      <div class="badge">🦷 Tedavilerimiz</div>
-      <h2 class="ttl">Size Özel Diş Sağlığı Çözümleri</h2>
-      <p class="sub">En güncel tedavi yöntemleri ve deneyimli ekibimizle ağız ve diş sağlığınız için kapsamlı hizmetler sunuyoruz.</p>
-    </div>
-    <div class="carousel" id="treatCar">
-      <div class="car-card fu"><div class="car-ico">🖥️</div><h3>CAD/CAM Sistemleri</h3><p>Dijital tasarım ile tek seansta hassas porselen restorasyon.</p><a href="tedaviler.html#cad-cam" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🪡</div><h3>Dolgular</h3><p>Estetik ve dayanıklı kompozit dolgular ile dişlerinizi koruyun.</p><a href="tedaviler.html#dolgular" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">⚡</div><h3>Kanal Tedavileri</h3><p>Ağrısız kanal tedavisi ile dişinizi uzun yıllar yaşatın.</p><a href="tedaviler.html#kanal-tedavileri" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🔬</div><h3>Cerrahi Tedaviler</h3><p>Gömülü diş çekimi ve çene cerrahisi işlemleri uzman ellerde.</p><a href="tedaviler.html#cerrahi-tedaviler" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🦷</div><h3>İmplant</h3><p>Eksik dişleriniz için kalıcı ve doğal görünümlü çözümler.</p><a href="tedaviler.html#implant" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">✅</div><h3>Protezler</h3><p>Sabit ve hareketli protez seçenekleriyle doğal görünüm ve işlev.</p><a href="tedaviler.html#protezler" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🌿</div><h3>Periodontoloji</h3><p>Diş eti hastalıklarının teşhis ve kapsamlı tedavisi.</p><a href="tedaviler.html#periodontoloji" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🧒</div><h3>Çocuk Dişleri</h3><p>Minik hastalara özel, eğlenceli ve korkusuz diş bakımı.</p><a href="tedaviler.html#cocuk-disleri" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">😁</div><h3>Ortodonti</h3><p>Şeffaf plak ve tel tedavileri ile düzenli, güzel dişler.</p><a href="tedaviler.html#ortodonti" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💆</div><h3>Çene Eklemi Tedavisi</h3><p>TME bozukluğu ve çene ağrılarında uzman yaklaşım.</p><a href="tedaviler.html#cene-eklemi" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">📡</div><h3>Radyolojik Görüntüleme</h3><p>Dijital röntgen ve panoramik görüntüleme ile doğru tanı.</p><a href="tedaviler.html#radyolojik" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🛡️</div><h3>Koruyucu Dişhekimliği</h3><p>Flor uygulaması ve fissür örtücü ile çürük önleme.</p><a href="tedaviler.html#koruyucu" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💡</div><h3>Dişhekimliğinde Lazer</h3><p>Minimal invaziv lazer tedavi ile hızlı ve konforlu iyileşme.</p><a href="tedaviler.html#lazer" class="car-link">Detaylı Bilgi →</a></div>
-    </div>
-    <div class="sec-more"><a href="tedaviler.html">Tüm Tedavileri Görüntüle →</a></div>
-  </div>
-</section>
-
-<!-- AGIZ VE DIS SAGLIGI CAROUSEL -->
-<section style="background:var(--teal-s)" id="agiz-sagligi">
-  <div class="wrap">
-    <div class="sec-head fu">
-      <div class="badge">💧 Ağız ve Diş Sağlığı</div>
-      <h2 class="ttl">Ağzınızın Sağlığını Koruyun</h2>
-      <p class="sub">Ağız ve diş sağlığınıza ilişkin merak ettikleriniz ve dikkat etmeniz gerekenler hakkında kapsamlı bilgi.</p>
-    </div>
-    <div class="carousel" id="agizCar">
-      <div class="car-card fu"><div class="car-ico">🪥</div><h3>Ağız ve Diş Bakımı</h3><p>Günlük bakım alışkanlıkları ile sağlıklı ağız hijyeni.</p><a href="agiz-dis-sagligi.html#agiz-dis-bakimi" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🦷</div><h3>Diş Çürükleri</h3><p>Diş çürüklerinin nedenleri, belirtileri ve önleme yöntemleri.</p><a href="agiz-dis-sagligi.html#dis-curukler" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🌿</div><h3>Dişeti Sağlığı</h3><p>Dişeti iltihabı ve ağız yaralarına karşı korunma yolları.</p><a href="agiz-dis-sagligi.html#diseti-sagligi" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💔</div><h3>Diş Kırıkları</h3><p>Travma sonrası diş kırığı ve yaralanma yönetimi.</p><a href="agiz-dis-sagligi.html#dis-kiriklari" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">❄️</div><h3>Hassas Dişler</h3><p>Sıcak-soğuk hassasiyetinin nedenleri ve çözüm yolları.</p><a href="agiz-dis-sagligi.html#hassas-disler" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💨</div><h3>Ağız Kokusu</h3><p>Ağız kokusunun kökenine inmek ve kalıcı tedavi yöntemleri.</p><a href="agiz-dis-sagligi.html#agiz-kokusu" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💧</div><h3>Ağız Kuruluğu</h3><p>Kserostomi belirtileri, nedenleri ve rahatlama önerileri.</p><a href="agiz-dis-sagligi.html#agiz-kurulugu" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">😬</div><h3>Diş Gıcırdatma</h3><p>Bruksizm nedir, dişlerinizi nasıl korursunuz?</p><a href="agiz-dis-sagligi.html#dis-gicirdatma" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">📅</div><h3>20 Yaş Dişleri</h3><p>Yirmilik dişlerin çıkış sorunları ve tedavi seçenekleri.</p><a href="agiz-dis-sagligi.html#yirmiyas-disleri" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">😰</div><h3>Diş Tedavisi Korkusu</h3><p>Dental fobiyle başa çıkma ve kliniğimizin desteği.</p><a href="agiz-dis-sagligi.html#tedavi-korkusu" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🚨</div><h3>Acil Durumlar</h3><p>Ani diş ağrısı ve kırığında ne yapmalısınız?</p><a href="agiz-dis-sagligi.html#acil-durumlar" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🧼</div><h3>Sterilizasyon</h3><p>Kliniğimizde uygulanan uluslararası sterilizasyon standartları.</p><a href="agiz-dis-sagligi.html#sterilizasyon" class="car-link">Detaylı Bilgi →</a></div>
-    </div>
-    <div class="sec-more"><a href="agiz-dis-sagligi.html">Ağız ve Diş Sağlığı Rehberi →</a></div>
-  </div>
-</section>
-
-<!-- DIS ESTETIGI CAROUSEL -->
-<section id="dis-estetigi">
-  <div class="wrap">
-    <div class="sec-head fu">
-      <div class="badge">✨ Diş Estetiği</div>
-      <h2 class="ttl">Hayalinizdeki Gülüşe Kavuşun</h2>
-      <p class="sub">Estetik diş hekimliği uygulamalarımızla gülüşünüzü dönüştürüyor, özgüveninizi yeniden inşa ediyoruz.</p>
-    </div>
-    <div class="carousel" id="estetikCar">
-      <div class="car-card fu"><div class="car-ico">✨</div><h3>Porselen Laminalar</h3><p>İnce porselen yapraklar ile mükemmel ve doğal görünümlü gülüş.</p><a href="dis-estetigi.html#porselen-laminalar" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">💎</div><h3>Zirkonyum Porselenler</h3><p>Üstün dayanıklılık ve doğal görünüm bir arada zirkonyum kaplama.</p><a href="dis-estetigi.html#zirkonyum" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">⚪</div><h3>Diş Beyazlatma</h3><p>Profesyonel beyazlatma ile 3-8 ton daha parlak, beyaz gülüş.</p><a href="dis-estetigi.html#dis-beyazlatma" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🎨</div><h3>Estetik Dolgular</h3><p>Dişe uyumlu renk seçimi ile görünmez, doğal onarım.</p><a href="dis-estetigi.html#estetik-dolgular" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">🌺</div><h3>Dişeti Estetiği</h3><p>Gummy smile ve dişeti düzensizlikleri için şekillendirme uygulamaları.</p><a href="dis-estetigi.html#diseti-estetigi" class="car-link">Detaylı Bilgi →</a></div>
-      <div class="car-card fu"><div class="car-ico">😊</div><h3>Ortodonti</h3><p>Şeffaf plak ve braket ile simetrik, düzenli ve estetik dişler.</p><a href="dis-estetigi.html#ortodonti" class="car-link">Detaylı Bilgi →</a></div>
-    </div>
-    <div class="sec-more"><a href="dis-estetigi.html">Diş Estetiği Hakkında →</a></div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section class="about" id="hakkimizda">
   <div class="about-in">
     <div class="about-img-w fu">
-      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=480&q=82" alt="Diş hekimi muayenehane">
+      <img src="images/photo-1629909613654-28e377c37b09.jpg" alt="Diş hekimi muayenehane">
       <div class="about-yr">
         <div class="ayr-n">30+</div>
         <div class="ayr-l">Yıllık Deneyim</div>
@@ -494,60 +148,114 @@ footer{background:var(--dark);padding:56px 20px 0}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="yorumlar">
+
+<!-- WHY US -->
+<section class="whyus" id="nedenbiz">
   <div class="wrap">
-    <div class="test-head fu">
-      <div class="badge">💬 Hasta Yorumları</div>
-      <h2 class="ttl">Mutlu Hastalarımız Anlatıyor</h2>
-      <p class="sub">Her yaştan binlerce hastamızın deneyimleri bizi güçlendiriyor.</p>
+    <div class="why-head fu">
+      <div class="badge">😊 Neden Biz?</div>
+      <h2 class="ttl">Farkımızı Hissedeceksiniz</h2>
+      <p class="sub">Klinik deneyiminizi mümkün olan en iyi hale getirmek için her ayrıntıyı özenle planladık.</p>
     </div>
-    <div class="test-grid stg">
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">Gülüş Tasarımı</span>
-        <p class="ttxt">"Dr. Naime hanım gerçekten harika! Yıllardır çekindiğim gülüşümü artık özgürce paylaşıyorum. Hem çok ilgili hem de çok sabırlı bir hekim. Kliniğin atmosferi de çok sıcak."</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=5" alt="Ayşe Kaya"><div><div class="tname">Ayşe Kaya</div><div class="tage">34 yaşında</div></div></div>
-      </div>
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">İmplant Tedavisi</span>
-        <p class="ttxt">"İmplant konusunda çok tedirgin ve kararsızdım. Dr. Naime beni bilgilendirerek güven verdi. Sonuç mükemmel, artık rahatça yemek yiyebiliyorum."</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=12" alt="Mehmet Demir"><div><div class="tname">Mehmet Demir</div><div class="tage">52 yaşında</div></div></div>
-      </div>
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">Diş Teli</span>
-        <p class="ttxt">"Çocuğumu çocuk diş hekimliği için getirdim, kendim de ortodonti tedavisi oldum. İkimiz için de harika bir deneyimdi. Minikler için özel ilgi gerçekten fark yaratıyor."</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=9" alt="Zeynep Arslan"><div><div class="tname">Zeynep Arslan</div><div class="tage">28 yaşında</div></div></div>
-      </div>
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">Diş Beyazlatma</span>
-        <p class="ttxt">"Beyazlatma işleminden çok memnun kaldım. Sonuçlar beklentimin çok üzerindeydi. Personel de son derece güler yüzlü ve yardımsever. Herkese tavsiye ederim."</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=15" alt="Hasan Yıldız"><div><div class="tname">Hasan Yıldız</div><div class="tage">45 yaşında</div></div></div>
-      </div>
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">Protez Tedavisi</span>
-        <p class="ttxt">"Yaşım nedeniyle çok korkuyordum ama Dr. Naime hanım o kadar anlayışlı davrandı ki hiç zorluk çekmedim. Protezlerim tamamen doğal görünüyor, çok mutluyum."</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=3" alt="Elif Şahin"><div><div class="tname">Elif Şahin</div><div class="tage">67 yaşında</div></div></div>
-      </div>
-      <div class="tcard fu">
-        <div class="tq">"</div>
-        <div class="tstars">★★★★★</div>
-        <span class="ttag">Çocuk Diş Hekimliği</span>
-        <p class="ttxt">"Annem anlattı: Dişçiye gitmeyi sevmiyordum ama burada çok eğlendim! Dr. Naime hanım bana oyuncak verdi ve hiç acı olmadı. Artık dişçiye gitmek istiyorum!"</p>
-        <div class="tauthor"><img class="tava" src="https://i.pravatar.cc/48?img=44" alt="Can Öztürk"><div><div class="tname">Can Öztürk</div><div class="tage">9 yaşında</div></div></div>
-      </div>
+    <div class="why-grid stg">
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1606811971618-4486d14f3f99.jpg" alt="Modern Teknoloji"><div class="wc-body"><h3>Modern Teknoloji</h3><p>3D görüntüleme, lazer tedavi ve dijital diş izi sistemleriyle en güncel tedavileri sunuyoruz.</p></div></div>
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1576091160399-112ba8d25d1d.jpg" alt="Hijyen Standartları"><div class="wc-body"><h3>Hijyen Standartları</h3><p>Sterilizasyon protokollerimiz uluslararası standartları karşılar. Güvenliğiniz önceliğimiz.</p></div></div>
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1571019613454-1cb2f99b2d8b.jpg" alt="Ağrısız Tedavi"><div class="wc-body"><h3>Ağrısız Tedavi</h3><p>Gelişmiş anestezi yöntemleri sayesinde işlemleriniz sırasında ağrı hissetmezsiniz.</p></div></div>
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1518644730709-0835105d9daa.jpg" alt="Esnek Randevu"><div class="wc-body"><h3>Esnek Randevu</h3><p>Sabah erken ve akşam geç saatlerde randevu imkânıyla yoğun gündem planınıza uyum sağlarız.</p></div></div>
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1629909613654-28e377c37b09.jpg" alt="Uzman Hekim"><div class="wc-body"><h3>Uzman Hekim</h3><p>Alanında 30+ yıl deneyimli uzman diş hekimi ve yardımcı personelimizle hizmetinizdeyiz.</p></div></div>
+      <div class="why-card fu"><img class="wc-img" src="images/photo-1529156069898-49953e39b3ac.jpg" alt="Sıcak Ortam"><div class="wc-body"><h3>Sıcak Ortam</h3><p>Kaygılarınızı anlayan, sabırlı ve güler yüzlü bir ekiple kendinizi evde hissedeceksiniz.</p></div></div>
     </div>
   </div>
 </section>
+
+<!-- TEDAVILER CAROUSEL -->
+<section id="tedaviler">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="badge">🦷 Tedavilerimiz</div>
+      <h2 class="ttl">Size Özel Diş Sağlığı Çözümleri</h2>
+      <p class="sub">En güncel tedavi yöntemleri ve deneyimli ekibimizle ağız ve diş sağlığınız için kapsamlı hizmetler sunuyoruz.</p>
+    </div>
+    <div class="car-wrap">
+      <button class="car-nav car-prev" aria-label="Önceki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel" id="treatCar">
+      <div class="car-card fu"><img class="car-img" src="images/photo-1607962837359-5e7e89f86776.jpg" alt="CAD/CAM Sistemleri"><div class="car-body"><h3>CAD/CAM Sistemleri</h3><p>Dijital tasarım ile tek seansta hassas porselen restorasyon.</p><a href="tedaviler.html#cad-cam" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1581056771107-24ca5f033842.jpg" alt="Dolgular"><div class="car-body"><h3>Dolgular</h3><p>Estetik ve dayanıklı kompozit dolgular ile dişlerinizi koruyun.</p><a href="tedaviler.html#dolgular" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1609840114035-3c981b782dfe.jpg" alt="Kanal Tedavileri"><div class="car-body"><h3>Kanal Tedavileri</h3><p>Ağrısız kanal tedavisi ile dişinizi uzun yıllar yaşatın.</p><a href="tedaviler.html#kanal-tedavileri" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1500048993953-d23a436266cf.jpg" alt="Cerrahi Tedaviler"><div class="car-body"><h3>Cerrahi Tedaviler</h3><p>Gömülü diş çekimi ve çene cerrahisi işlemleri uzman ellerde.</p><a href="tedaviler.html#cerrahi-tedaviler" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1599566150163-29194dcaad36.jpg" alt="İmplant"><div class="car-body"><h3>İmplant</h3><p>Eksik dişleriniz için kalıcı ve doğal görünümlü çözümler.</p><a href="tedaviler.html#implant" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1559757148-5c350d0d3c56.jpg" alt="Protezler"><div class="car-body"><h3>Protezler</h3><p>Sabit ve hareketli protez seçenekleriyle doğal görünüm ve işlev.</p><a href="tedaviler.html#protezler" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1607990283143-e81e7a2c9349.jpg" alt="Periodontoloji"><div class="car-body"><h3>Periodontoloji</h3><p>Diş eti hastalıklarının teşhis ve kapsamlı tedavisi.</p><a href="tedaviler.html#periodontoloji" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1556742044-3c52d6e88c62.jpg" alt="Çocuk Dişleri"><div class="car-body"><h3>Çocuk Dişleri</h3><p>Minik hastalara özel, eğlenceli ve korkusuz diş bakımı.</p><a href="tedaviler.html#cocuk-disleri" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1572021335469-31706a17aaef.jpg" alt="Ortodonti"><div class="car-body"><h3>Ortodonti</h3><p>Şeffaf plak ve tel tedavileri ile düzenli, güzel dişler.</p><a href="tedaviler.html#ortodonti" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1598256989800-fe5f95da9787.jpg" alt="Çene Eklemi Tedavisi"><div class="car-body"><h3>Çene Eklemi Tedavisi</h3><p>TME bozukluğu ve çene ağrılarında uzman yaklaşım.</p><a href="tedaviler.html#cene-eklemi" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1527613426441-4da17471b66d.jpg" alt="Radyolojik Görüntüleme"><div class="car-body"><h3>Radyolojik Görüntüleme</h3><p>Dijital röntgen ve panoramik görüntüleme ile doğru tanı.</p><a href="tedaviler.html#radyolojik" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1559839734-2b71ea197ec2.jpg" alt="Koruyucu Dişhekimliği"><div class="car-body"><h3>Koruyucu Dişhekimliği</h3><p>Flor uygulaması ve fissür örtücü ile çürük önleme.</p><a href="tedaviler.html#koruyucu" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1526256262350-7da7584cf5eb.jpg" alt="Dişhekimliğinde Lazer"><div class="car-body"><h3>Dişhekimliğinde Lazer</h3><p>Minimal invaziv lazer tedavi ile hızlı ve konforlu iyileşme.</p><a href="tedaviler.html#lazer" class="car-link">Detaylı Bilgi →</a></div></div>
+      </div>
+      <button class="car-nav car-next" aria-label="Sonraki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="car-prog-bar"><div class="car-fill"></div></div>
+    <div class="sec-more"><a href="tedaviler.html">Tüm Tedavileri Görüntüle →</a></div>
+  </div>
+</section>
+
+<!-- AGIZ-SAGLIGI CAROUSEL -->
+<section style="background:var(--teal-s)" id="agiz-sagligi">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="badge">💧 Ağız ve Diş Sağlığı</div>
+      <h2 class="ttl">Ağzınızın Sağlığını Koruyun</h2>
+      <p class="sub">Ağız ve diş sağlığınıza ilişkin merak ettikleriniz ve dikkat etmeniz gerekenler hakkında kapsamlı bilgi.</p>
+    </div>
+    <div class="car-wrap">
+      <button class="car-nav car-prev" aria-label="Önceki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel" id="agizCar">
+      <div class="car-card fu"><img class="car-img" src="images/photo-1571019613454-1cb2f99b2d8b.jpg" alt="Ağız ve Diş Bakımı"><div class="car-body"><h3>Ağız ve Diş Bakımı</h3><p>Günlük bakım alışkanlıkları ile sağlıklı ağız hijyeni.</p><a href="agiz-dis-sagligi.html#agiz-dis-bakimi" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1606811971618-4486d14f3f99.jpg" alt="Diş Çürükleri"><div class="car-body"><h3>Diş Çürükleri</h3><p>Diş çürüklerinin nedenleri, belirtileri ve önleme yöntemleri.</p><a href="agiz-dis-sagligi.html#dis-curukler" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1607990283143-e81e7a2c9349.jpg" alt="Dişeti Sağlığı"><div class="car-body"><h3>Dişeti Sağlığı</h3><p>Dişeti iltihabı ve ağız yaralarına karşı korunma yolları.</p><a href="agiz-dis-sagligi.html#diseti-sagligi" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1584308666744-24d5c474f2ae.jpg" alt="Diş Kırıkları"><div class="car-body"><h3>Diş Kırıkları</h3><p>Travma sonrası diş kırığı ve yaralanma yönetimi.</p><a href="agiz-dis-sagligi.html#dis-kiriklari" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1603398938378-e54eab446dde.jpg" alt="Hassas Dişler"><div class="car-body"><h3>Hassas Dişler</h3><p>Sıcak-soğuk hassasiyetinin nedenleri ve çözüm yolları.</p><a href="agiz-dis-sagligi.html#hassas-disler" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1512290923902-8a9f81dc236c.jpg" alt="Ağız Kokusu"><div class="car-body"><h3>Ağız Kokusu</h3><p>Ağız kokusunun kökenine inmek ve kalıcı tedavi yöntemleri.</p><a href="agiz-dis-sagligi.html#agiz-kokusu" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1611605698335-8b1569810432.jpg" alt="Ağız Kuruluğu"><div class="car-body"><h3>Ağız Kuruluğu</h3><p>Kserostomi belirtileri, nedenleri ve rahatlama önerileri.</p><a href="agiz-dis-sagligi.html#agiz-kurulugu" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1555252333-9f8e92e65df9.jpg" alt="Diş Gıcırdatma"><div class="car-body"><h3>Diş Gıcırdatma</h3><p>Bruksizm nedir, dişlerinizi nasıl korursunuz?</p><a href="agiz-dis-sagligi.html#dis-gicirdatma" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1500048993953-d23a436266cf.jpg" alt="20 Yaş Dişleri"><div class="car-body"><h3>20 Yaş Dişleri</h3><p>Yirmilik dişlerin çıkış sorunları ve tedavi seçenekleri.</p><a href="agiz-dis-sagligi.html#yirmiyas-disleri" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1529156069898-49953e39b3ac.jpg" alt="Diş Tedavisi Korkusu"><div class="car-body"><h3>Diş Tedavisi Korkusu</h3><p>Dental fobiyle başa çıkma ve kliniğimizin desteği.</p><a href="agiz-dis-sagligi.html#tedavi-korkusu" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1584308666744-24d5c474f2ae.jpg" alt="Acil Durumlar"><div class="car-body"><h3>Acil Durumlar</h3><p>Ani diş ağrısı ve kırığında ne yapmalısınız?</p><a href="agiz-dis-sagligi.html#acil-durumlar" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1576091160399-112ba8d25d1d.jpg" alt="Sterilizasyon"><div class="car-body"><h3>Sterilizasyon</h3><p>Kliniğimizde uygulanan uluslararası sterilizasyon standartları.</p><a href="agiz-dis-sagligi.html#sterilizasyon" class="car-link">Detaylı Bilgi →</a></div></div>
+      </div>
+      <button class="car-nav car-next" aria-label="Sonraki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="car-prog-bar"><div class="car-fill"></div></div>
+    <div class="sec-more"><a href="agiz-dis-sagligi.html">Ağız ve Diş Sağlığı Rehberi →</a></div>
+  </div>
+</section>
+
+<!-- DIS-ESTETIGI CAROUSEL -->
+<section id="dis-estetigi">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="badge">✨ Diş Estetiği</div>
+      <h2 class="ttl">Hayalinizdeki Gülüşe Kavuşun</h2>
+      <p class="sub">Estetik diş hekimliği uygulamalarımızla gülüşünüzü dönüştürüyor, özgüveninizi yeniden inşa ediyoruz.</p>
+    </div>
+    <div class="car-wrap">
+      <button class="car-nav car-prev" aria-label="Önceki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel" id="estetikCar">
+      <div class="car-card fu"><img class="car-img" src="images/photo-1571019613454-1cb2f99b2d8b.jpg" alt="Porselen Laminalar"><div class="car-body"><h3>Porselen Laminalar</h3><p>İnce porselen yapraklar ile mükemmel ve doğal görünümlü gülüş.</p><a href="dis-estetigi.html#porselen-laminalar" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1607962837359-5e7e89f86776.jpg" alt="Zirkonyum Porselenler"><div class="car-body"><h3>Zirkonyum Porselenler</h3><p>Üstün dayanıklılık ve doğal görünüm bir arada zirkonyum kaplama.</p><a href="dis-estetigi.html#zirkonyum" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1529156069898-49953e39b3ac.jpg" alt="Diş Beyazlatma"><div class="car-body"><h3>Diş Beyazlatma</h3><p>Profesyonel beyazlatma ile 3-8 ton daha parlak, beyaz gülüş.</p><a href="dis-estetigi.html#dis-beyazlatma" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1581056771107-24ca5f033842.jpg" alt="Estetik Dolgular"><div class="car-body"><h3>Estetik Dolgular</h3><p>Dişe uyumlu renk seçimi ile görünmez, doğal onarım.</p><a href="dis-estetigi.html#estetik-dolgular" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1607990283143-e81e7a2c9349.jpg" alt="Dişeti Estetiği"><div class="car-body"><h3>Dişeti Estetiği</h3><p>Gummy smile ve dişeti düzensizlikleri için şekillendirme uygulamaları.</p><a href="dis-estetigi.html#diseti-estetigi" class="car-link">Detaylı Bilgi →</a></div></div>
+      <div class="car-card fu"><img class="car-img" src="images/photo-1572021335469-31706a17aaef.jpg" alt="Ortodonti"><div class="car-body"><h3>Ortodonti</h3><p>Şeffaf plak ve braket ile simetrik, düzenli ve estetik dişler.</p><a href="dis-estetigi.html#ortodonti" class="car-link">Detaylı Bilgi →</a></div></div>
+      </div>
+      <button class="car-nav car-next" aria-label="Sonraki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="car-prog-bar"><div class="car-fill"></div></div>
+    <div class="sec-more"><a href="dis-estetigi.html">Diş Estetiği Hakkında →</a></div>
+  </div>
+</section>
+
 
 <!-- APPOINTMENT -->
 <section id="iletisim" style="background:var(--teal-s)">
@@ -564,8 +272,8 @@ footer{background:var(--dark);padding:56px 20px 0}
           <div><div class="ci-lbl">Telefon</div><div class="ci-val"><a href="tel:+902163617181" style="color:inherit;text-decoration:none">+90 216 361 71 81</a></div></div>
         </div>
         <div class="ci">
-          <div class="ci-ico ci-r">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E07070" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="ci-ico ci-t">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div><div class="ci-lbl">Adres</div><div class="ci-val">Şemsettin Günaltay Cad. Kocayol Sok. No:2/5 Kat:1, Şenesenevler – Bostancı / İstanbul</div></div>
         </div>
@@ -576,8 +284,8 @@ footer{background:var(--dark);padding:56px 20px 0}
           <div><div class="ci-lbl">E-Posta</div><div class="ci-val">dishekimi@naimekor.com</div></div>
         </div>
         <div class="ci">
-          <div class="ci-ico ci-g">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8899AA" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="ci-ico ci-t">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div><div class="ci-lbl">Çalışma Saatleri</div><div class="ci-val">Pzt – Cum: 09:00 – 19:00 &nbsp;·&nbsp; Cmt: 09:00 – 14:00</div></div>
         </div>
@@ -636,7 +344,7 @@ footer{background:var(--dark);padding:56px 20px 0}
     <div>
       <div class="foot-logo">
         <a href="index.html" class="logo">
-          <div class="logo-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="white"/></svg></div>
+          <div class="logo-ico"><img src="images/logo-icon.png" alt="Logo"></div>
           <div><div class="logo-name" style="color:#fff">Dt. Naime Altuntaş</div><div class="logo-sub">Ağız ve Diş Sağlığı</div></div>
         </a>
       </div>
@@ -653,7 +361,6 @@ footer{background:var(--dark);padding:56px 20px 0}
         <li><a href="index.html#anasayfa">Ana Sayfa</a></li>
         <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
         <li><a href="tedaviler.html">Tedaviler</a></li>
-        <li><a href="index.html#yorumlar">Hasta Yorumları</a></li>
         <li><a href="index.html#iletisim">Randevu Al</a></li>
       </ul>
     </div>
@@ -710,6 +417,28 @@ document.getElementById('apptForm').addEventListener('submit', e => {
     btn.disabled = false;
     e.target.reset();
   }, 3500);
+});
+
+// Carousel navigation
+document.querySelectorAll('.car-wrap').forEach(wrap => {
+  const car = wrap.querySelector('.carousel');
+  const prev = wrap.querySelector('.car-prev');
+  const next = wrap.querySelector('.car-next');
+  const progBar = wrap.closest('section').querySelector('.car-prog-bar');
+  const fill = progBar && progBar.querySelector('.car-fill');
+  function update() {
+    prev.classList.toggle('hidden', car.scrollLeft <= 2);
+    next.classList.toggle('hidden', car.scrollLeft + car.clientWidth >= car.scrollWidth - 2);
+    if (fill) {
+      const r = car.scrollWidth <= car.clientWidth ? 1 : car.scrollLeft / (car.scrollWidth - car.clientWidth);
+      fill.style.width = Math.min(100, 12 + r * 88) + '%';
+    }
+  }
+  prev.addEventListener('click', () => { const c = car.querySelector('.car-card'); car.scrollBy({left: -(c.offsetWidth + 16), behavior:'smooth'}); });
+  next.addEventListener('click', () => { const c = car.querySelector('.car-card'); car.scrollBy({left: c.offsetWidth + 16, behavior:'smooth'}); });
+  car.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  setTimeout(update, 150);
 });
 </script>
 </body>
