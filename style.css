@@ -287,5 +287,7 @@ footer{background:var(--dark);padding:56px 20px 0}
   .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .toc-link{justify-content:center;text-align:center}
   .toc-link:last-child:nth-child(odd){grid-column:1 / -1}
+  .citems{gap:7px}
+  .ci{padding:10px 13px}
 }
 @media(max-width:520px){  .treat-section{padding:48px 16px}  .toc-wrap{padding:20px 16px}}
