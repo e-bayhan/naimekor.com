@@ -420,13 +420,17 @@ document.getElementById('apptForm').addEventListener('submit', e => {
   }, 3500);
 });
 
-// Carousel navigation
+// Carousel — auto-scroll + mouse drag + touch
 document.querySelectorAll('.car-wrap').forEach(wrap => {
-  const car = wrap.querySelector('.carousel');
+  const car  = wrap.querySelector('.carousel');
   const prev = wrap.querySelector('.car-prev');
   const next = wrap.querySelector('.car-next');
-  const progBar = wrap.closest('section').querySelector('.car-prog-bar');
-  const fill = progBar && progBar.querySelector('.car-fill');
+  const fill = wrap.closest('section').querySelector('.car-fill');
+  const GAP  = 16, INTERVAL = 3800, RESUME_DELAY = 5000;
+  let timer = null, resumeTimer = null;
+
+  const cw = () => { const c = car.querySelector('.car-card'); return c ? c.offsetWidth + GAP : 260; };
+
   function update() {
     prev.classList.toggle('hidden', car.scrollLeft <= 2);
     next.classList.toggle('hidden', car.scrollLeft + car.clientWidth >= car.scrollWidth - 2);
@@ -435,11 +439,59 @@ document.querySelectorAll('.car-wrap').forEach(wrap => {
       fill.style.width = Math.min(100, 12 + r * 88) + '%';
     }
   }
-  prev.addEventListener('click', () => { const c = car.querySelector('.car-card'); car.scrollBy({left: -(c.offsetWidth + 16), behavior:'smooth'}); });
-  next.addEventListener('click', () => { const c = car.querySelector('.car-card'); car.scrollBy({left: c.offsetWidth + 16, behavior:'smooth'}); });
-  car.addEventListener('scroll', update, {passive:true});
+
+  function advance() {
+    if (car.scrollLeft + car.clientWidth >= car.scrollWidth - 4) {
+      car.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      car.scrollBy({ left: cw(), behavior: 'smooth' });
+    }
+  }
+
+  function start() { if (!timer) timer = setInterval(advance, INTERVAL); }
+  function stop()  { clearInterval(timer); timer = null; }
+  function scheduleResume() {
+    stop();
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(start, RESUME_DELAY);
+  }
+
+  prev.addEventListener('click', () => { car.scrollBy({ left: -cw(), behavior: 'smooth' }); scheduleResume(); });
+  next.addEventListener('click', () => { car.scrollBy({ left:  cw(), behavior: 'smooth' }); scheduleResume(); });
+
+  // Hover: pause while mouse is over carousel
+  wrap.addEventListener('mouseenter', stop);
+  wrap.addEventListener('mouseleave', () => { clearTimeout(resumeTimer); start(); });
+
+  // Mouse drag (desktop)
+  let drag = false, ox = 0, osl = 0;
+  car.addEventListener('mousedown', e => {
+    drag = true; ox = e.pageX; osl = car.scrollLeft;
+    car.style.cursor = 'grabbing';
+    car.style.scrollSnapType = 'none';
+    stop();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!drag) return;
+    car.scrollLeft = osl - (e.pageX - ox);
+  });
+  document.addEventListener('mouseup', () => {
+    if (!drag) return;
+    drag = false;
+    car.style.cursor = '';
+    car.style.scrollSnapType = '';
+    const w = cw();
+    car.scrollTo({ left: Math.round(car.scrollLeft / w) * w, behavior: 'smooth' });
+    scheduleResume();
+  });
+
+  // Touch: native scroll handles swipe; just pause/resume auto
+  car.addEventListener('touchstart',  stop,           { passive: true });
+  car.addEventListener('touchend',    scheduleResume, { passive: true });
+
+  car.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
-  setTimeout(update, 150);
+  setTimeout(() => { update(); start(); }, 400);
 });
 </script>
 </body>
