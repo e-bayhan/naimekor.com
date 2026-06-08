@@ -57,7 +57,7 @@ nav{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align
 .mob-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--bdr);padding:4px 20px 20px}
 .mob-nav.open{display:flex}
 .mob-nav>a{color:var(--txt2);text-decoration:none;font-size:15px;font-weight:600;padding:13px 0;border-bottom:1px solid var(--bdr)}
-.mob-nav>a:last-child{color:var(--teal);border:none}
+.mob-nav>a:last-child{background:var(--lilac);color:#fff;border:none;border-radius:10px;padding:13px 20px;text-align:center;margin-top:6px;justify-content:center}
 .mob-sub{display:flex;flex-direction:column;padding:4px 0 4px 16px;border-bottom:1px solid var(--bdr)}
 .mob-sub a{color:var(--txt2);text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 0;border:none}
 
@@ -240,6 +240,11 @@ footer{background:var(--dark);padding:56px 20px 0}
   .afacts{grid-template-columns:1fr}
   .car-card{flex:0 0 calc(85% - 8px)}
   .topbar-left{display:none}
+  .topbar-in{justify-content:flex-end}
+  .hero-tags{flex-direction:column;gap:7px}
+  .htag{width:100%}
+  .hero-btns{flex-wrap:nowrap}
+  .hero-btns .btn-teal,.hero-btns .btn-out{flex:1;justify-content:center;padding:12px 8px}
 }
 
 /* ── SUBPAGES ── */
