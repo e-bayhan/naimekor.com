@@ -283,4 +283,9 @@ footer{background:var(--dark);padding:56px 20px 0}
 .result-box p{font-size:13px;color:var(--txt);line-height:1.65;margin:0}
 .result-box strong{color:var(--teal)}
 @media(max-width:768px){  .treat-section,.treat-section:nth-child(even){grid-template-columns:1fr;gap:32px}  .treat-section:nth-child(even) .ts-img,.treat-section:nth-child(even) .ts-body{order:unset}}
+@media(max-width:600px){
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .toc-link{justify-content:center;text-align:center}
+  .toc-link:last-child:nth-child(odd){grid-column:1 / -1}
+}
 @media(max-width:520px){  .treat-section{padding:48px 16px}  .toc-wrap{padding:20px 16px}}
