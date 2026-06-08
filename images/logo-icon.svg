@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="rg" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#D4A882"/>
+      <stop offset="100%" stop-color="#B5805A"/>
+    </linearGradient>
+  </defs>
+  <!-- Tooth outer shape -->
+  <path d="
+    M33 17
+    C25 17 17 25 17 34
+    C17 44 20 54 24 63
+    C27 71 30 80 33 86
+    C35 91 38 92 40 89
+    C42 85 43 78 44 73
+    C45 69 47 67 50 67
+    C53 67 55 69 56 73
+    C57 78 58 85 60 89
+    C62 92 65 91 67 86
+    C70 80 73 71 76 63
+    C80 54 83 44 83 34
+    C83 25 75 17 67 17
+    C63 15 57 13 50 13
+    C43 13 37 15 33 17 Z
+  " stroke="url(#rg)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Heart inside crown -->
+  <path d="
+    M50 52
+    C49 51 37 44 37 37
+    C37 31.5 41.5 28 45.5 28
+    C47.8 28 49.4 29.5 50 31.5
+    C50.6 29.5 52.2 28 54.5 28
+    C58.5 28 63 31.5 63 37
+    C63 44 51 51 50 52 Z
+  " stroke="url(#rg)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Decorative swash top-right -->
+  <path d="M67 18 C73 11 83 11 86 17" stroke="url(#rg)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>
