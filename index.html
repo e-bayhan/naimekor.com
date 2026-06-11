@@ -19,8 +19,7 @@
 <div class="topbar">
   <div class="topbar-in">
     <span class="topbar-left">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.72.85 3.23 2.15 4.16C8.43 12.49 8 14.19 8 16c0 3.31 1.79 6 4 6s4-2.69 4-6c0-1.81-.43-3.51-1.15-4.84C16.15 10.23 17 8.72 17 7c0-2.76-2.24-5-5-5z"/></svg>
-      Sağlıklı gülüşler için buradayız
+      🌐 <strong>Çok Dilli Hizmet</strong><span class="topbar-langs">🇹🇷 TR · 🇬🇧 EN · 🇸🇦 AR</span>
     </span>
     <a href="tel:+902163617181" class="topbar-btn">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -118,13 +117,6 @@
         <div>
           <div class="hf-t">Ağrısız Tedavi</div>
           <div class="hf-s">Konforlu deneyim</div>
-        </div>
-      </div>
-      <div class="hfloat hf3">
-        <div class="hf-ico hf-ico-lang">🌐</div>
-        <div>
-          <div class="hf-t">Çok Dilli Hizmet</div>
-          <div class="hf-s hf-langs"><span>🇹🇷 TR</span><span class="hf-dot">·</span><span>🇬🇧 EN</span><span class="hf-dot">·</span><span>🇸🇦 AR</span></div>
         </div>
       </div>
     </div>
@@ -300,37 +292,49 @@
       </div>
     </div>
     <div class="fu">
-      <div class="fcard">
-        <h3>Randevu Formu</h3>
-        <form id="apptForm">
+      <div class="gmap-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=%C5%9Eemsettin+G%C3%BCnaltay+Cad.+Kocayol+Sok.+No:2%2F5+Kat:1+%C5%9Eenesenevler+Bostan%C4%B1+%C4%B0stanbul&output=embed&hl=tr&z=16"
+          title="Naimekor Konum" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Randevu Formu — tam genişlik -->
+  <div class="appt-form-wrap fu">
+    <div class="fcard">
+      <h3>Randevu Formu</h3>
+      <form id="apptForm">
+        <div class="form-row">
           <div class="fg"><label>Ad Soyad</label><input type="text" placeholder="Adınızı girin" required></div>
           <div class="fg"><label>Telefon</label><input type="tel" placeholder="05XX XXX XX XX" required></div>
-          <div class="fg">
-            <label>Tedavi Türü</label>
-            <select required>
-              <option value="">Tedavi seçin</option>
-              <option>İmplant</option>
-              <option>Gülüş Tasarımı / Porselen Lamina</option>
-              <option>Zirkonyum Kaplama</option>
-              <option>Diş Beyazlatma</option>
-              <option>Ortodonti</option>
-              <option>Çocuk Diş Hekimliği</option>
-              <option>Protezler</option>
-              <option>Kanal Tedavisi</option>
-              <option>Cerrahi Tedaviler</option>
-              <option>Periodontoloji</option>
-              <option>CAD/CAM Restorasyon</option>
-              <option>Diğer</option>
-            </select>
-          </div>
-          <div class="fg"><label>Not (İsteğe bağlı)</label><textarea placeholder="Şikayetinizi veya notunuzu yazın…"></textarea></div>
-          <button type="submit" class="submit-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Randevu Talebi Gönder
-          </button>
-          <p class="fnote">Bilgileriniz gizli tutulur ve yalnızca randevu için kullanılır.</p>
-        </form>
-      </div>
+        </div>
+        <div class="fg">
+          <label>Tedavi Türü</label>
+          <select required>
+            <option value="">Tedavi seçin</option>
+            <option>İmplant</option>
+            <option>Gülüş Tasarımı / Porselen Lamina</option>
+            <option>Zirkonyum Kaplama</option>
+            <option>Diş Beyazlatma</option>
+            <option>Ortodonti</option>
+            <option>Çocuk Diş Hekimliği</option>
+            <option>Protezler</option>
+            <option>Kanal Tedavisi</option>
+            <option>Cerrahi Tedaviler</option>
+            <option>Periodontoloji</option>
+            <option>CAD/CAM Restorasyon</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <div class="fg"><label>Not (İsteğe bağlı)</label><textarea placeholder="Şikayetinizi veya notunuzu yazın…"></textarea></div>
+        <button type="submit" class="submit-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Randevu Talebi Gönder
+        </button>
+        <p class="fnote">Bilgileriniz gizli tutulur ve yalnızca randevu için kullanılır.</p>
+      </form>
     </div>
   </div>
 </section>
