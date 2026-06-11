@@ -252,8 +252,8 @@ footer{background:var(--dark);padding:56px 20px 0}
   .why-grid{grid-template-columns:1fr}
   .afacts{grid-template-columns:1fr}
   .car-card{flex:0 0 calc(85% - 8px)}
-  .topbar-left{display:none}
-  .topbar-in{justify-content:flex-end}
+  .topbar-langs{display:none}
+  .topbar-left{font-size:12px}
   .hero-tags{flex-direction:column;gap:7px}
   .htag{width:100%}
   .hero-btns{flex-wrap:nowrap}
