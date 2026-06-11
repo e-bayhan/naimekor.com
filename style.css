@@ -156,17 +156,18 @@ section{padding:80px 20px}
 
 
 /* ── APPOINTMENT ── */
-.appt-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
-.appt-l .sub{margin-bottom:24px}
-.citems{display:flex;flex-direction:column;gap:11px}
-.ci{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:12px;background:var(--teal-s)}
-.ci-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.appt-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch}
+.appt-in>.fu{display:flex;flex-direction:column}
+.appt-l .sub{margin-bottom:16px}
+.citems{display:flex;flex-direction:column;gap:8px}
+.ci{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;background:var(--teal-s)}
+.ci-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .ci-t{background:var(--teal-bg)}
 .ci-r{background:#FDECEC}
 .ci-g{background:#F0F2F5}
 .ci-lbl{font-size:10.5px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px}
 .ci-val{font-size:13.5px;font-weight:700;color:var(--txt);margin-top:2px}
-.gmap-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--sh2);height:420px}
+.gmap-wrap{border-radius:20px;overflow:hidden;box-shadow:var(--sh2);flex:1;min-height:340px}
 .gmap-wrap iframe{width:100%;height:100%;display:block;border:0}
 .appt-form-wrap{max-width:1160px;margin:36px auto 0}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -238,7 +239,7 @@ footer{background:var(--dark);padding:56px 20px 0}
   .hf2{bottom:12px;right:12px}
   .hf3{bottom:12px;left:12px}
   .about-in,.appt-in{grid-template-columns:1fr;gap:44px}
-  .gmap-wrap{height:280px}
+  .gmap-wrap{flex:none;height:280px}
   .appt-form-wrap{margin-top:0}
   .form-row{grid-template-columns:1fr}
   .foot-in{grid-template-columns:1fr;gap:28px}
