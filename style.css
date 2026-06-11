@@ -193,7 +193,7 @@ section{padding:80px 20px}
 .btn-wht:hover{background:rgba(255,255,255,.14);border-color:#fff}
 
 /* ── FOOTER ── */
-footer{background:var(--dark);padding:56px 20px 0}
+footer{background:#2E86DE;padding:56px 20px 0}
 .foot-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
 .foot-desc{font-size:13px;color:rgba(255,255,255,.52);line-height:1.72;margin:12px 0 18px}
 .fsoc{display:flex;gap:9px}
