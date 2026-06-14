@@ -263,6 +263,9 @@ footer{background:#2E86DE;padding:56px 20px 0}
   .htag{width:100%}
   .hero-btns{flex-wrap:nowrap}
   .hero-btns .btn-teal,.hero-btns .btn-out{flex:1;justify-content:center;padding:12px 8px}
+  .hero-p{max-width:100%}
+  .hero-stats{gap:14px}
+  .hst-val{font-size:20px}
 }
 
 /* ── SUBPAGES ── */
