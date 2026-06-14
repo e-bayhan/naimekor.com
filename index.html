@@ -100,7 +100,7 @@
         </div>
         <div class="hst-sep"></div>
         <div>
-          <div class="hst-val">98%</div>
+          <div class="hst-val">%100</div>
           <div class="hst-lbl">Memnuniyet</div>
         </div>
       </div>
@@ -425,14 +425,15 @@ document.querySelectorAll('.fu').forEach(el => io.observe(el));
 function countUp(el) {
   const raw = el.textContent.trim();
   const num = parseInt(raw.replace(/\D/g, ''));
-  const suffix = raw.replace(/\d/g, '');
+  const prefix = (raw.match(/^[^\d]+/) || [''])[0];
+  const suffix = (raw.match(/[^\d]+$/) || [''])[0];
   const duration = 1600;
   const ease = t => 1 - Math.pow(1 - t, 3);
   let t0 = null;
   const step = ts => {
     if (!t0) t0 = ts;
     const p = Math.min((ts - t0) / duration, 1);
-    el.textContent = Math.floor(ease(p) * num) + suffix;
+    el.textContent = prefix + Math.floor(ease(p) * num) + suffix;
     if (p < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
