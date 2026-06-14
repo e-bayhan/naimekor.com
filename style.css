@@ -127,8 +127,8 @@ section{padding:80px 20px}
 .car-link{font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s;margin-top:4px}
 .car-link:hover{gap:8px}
 .sec-more{text-align:center;margin-top:16px}
-.sec-more a{font-size:13.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:10px 22px;border:2px solid var(--teal-bg);border-radius:10px;background:var(--teal-bg);transition:background .2s,border-color .2s}
-.sec-more a:hover{background:var(--lilac);border-color:var(--lilac);color:#fff}
+.sec-more a{font-size:13.5px;font-weight:700;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:10px 22px;border:none;border-radius:10px;background:var(--lilac);transition:background .2s,transform .15s}
+.sec-more a:hover{background:var(--lilac-h);transform:translateY(-1px)}
 
 /* ── CAROUSEL NAV ── */
 .car-wrap{position:relative}
