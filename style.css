@@ -66,7 +66,7 @@ footer .logo-sub{color:#fff}
 /* ── SHARED ── */
 .wrap{max-width:1160px;margin:0 auto}
 section{padding:80px 20px}
-.badge{display:inline-flex;align-items:center;gap:7px;background:var(--teal-bg);color:var(--teal);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--lilac);color:#fff;font-size:14px;font-weight:700;padding:6px 14px;border-radius:100px;margin-bottom:14px;pointer-events:none;user-select:none}
 .ttl{font-size:clamp(24px,2.8vw,36px);font-weight:700;line-height:1.25;margin-bottom:12px}
 .sub{font-size:14.5px;color:var(--txt2);line-height:1.75}
 .teal{color:var(--lilac)}
