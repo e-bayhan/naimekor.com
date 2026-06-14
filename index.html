@@ -95,7 +95,7 @@
         </div>
         <div class="hst-sep"></div>
         <div>
-          <div class="hst-val">1000+</div>
+          <div class="hst-val" data-static>1000'lerce</div>
           <div class="hst-lbl">Mutlu Hasta</div>
         </div>
         <div class="hst-sep"></div>
@@ -443,7 +443,7 @@ const counterIO = new IntersectionObserver(entries => {
     if (e.isIntersecting) { countUp(e.target); counterIO.unobserve(e.target); }
   });
 }, { threshold: 0.6 });
-document.querySelectorAll('.hst-val').forEach(el => counterIO.observe(el));
+document.querySelectorAll('.hst-val:not([data-static])').forEach(el => counterIO.observe(el));
 
 document.getElementById('apptForm').addEventListener('submit', e => {
   e.preventDefault();
