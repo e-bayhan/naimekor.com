@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitemiz Yenileniyor — naimekor.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Quicksand',sans-serif;background:#f0f5fb;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{background:#fff;border-radius:24px;padding:52px 44px;max-width:460px;width:100%;text-align:center;box-shadow:0 8px 40px rgba(46,134,222,.12)}
+  .logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:32px}
+  .logo img{width:52px;height:52px;object-fit:contain}
+  .logo-text{text-align:left}
+  .logo-name{font-size:15px;font-weight:700;color:#1C2B38}
+  .logo-sub{font-size:11px;font-weight:500;color:#7A8C9E}
+  .domain{font-size:13px;font-weight:600;color:#2E86DE;margin-bottom:36px;letter-spacing:.3px}
+  h1{font-size:22px;font-weight:700;color:#1C2B38;margin-bottom:10px}
+  .dots{display:inline-flex;gap:5px;margin-left:2px}
+  .dots span{width:6px;height:6px;border-radius:50%;background:#F97316;animation:bounce .9s infinite ease-in-out}
+  .dots span:nth-child(2){animation-delay:.18s}
+  .dots span:nth-child(3){animation-delay:.36s}
+  @keyframes bounce{0%,80%,100%{transform:scale(0.6);opacity:.5}40%{transform:scale(1);opacity:1}}
+  .divider{width:48px;height:3px;background:#2E86DE;border-radius:2px;margin:28px auto}
+  .info{display:flex;flex-direction:column;gap:14px}
+  .ci{display:flex;align-items:flex-start;gap:12px;text-align:left}
+  .ci-ico{width:36px;height:36px;border-radius:10px;background:#EBF4FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+  .ci-lbl{font-size:10px;font-weight:700;color:#2E86DE;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+  .ci-val{font-size:13.5px;font-weight:600;color:#1C2B38;line-height:1.5}
+  .ci-val a{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <img src="images/logo-icon.svg" alt="Logo">
+    <div class="logo-text">
+      <div class="logo-name">Dt. Naime Altuntaş</div>
+      <div class="logo-sub">Ağız ve Diş Sağlığı</div>
+    </div>
+  </div>
+  <div class="domain">www.naimekor.com</div>
+  <h1>Sitemiz yenileniyor<span class="dots"><span></span><span></span><span></span></span></h1>
+  <div class="divider"></div>
+  <div class="info">
+    <div class="ci">
+      <div class="ci-ico">📞</div>
+      <div>
+        <div class="ci-lbl">Tel</div>
+        <div class="ci-val"><a href="tel:+902163617181">+90 216 361 71 81</a></div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="ci-ico">📍</div>
+      <div>
+        <div class="ci-lbl">Adres</div>
+        <div class="ci-val">Şemsettin Günaltay Cad. Kocayol Sok. No:2/5 Kat:1, Şenesenevler – Bostancı / İstanbul</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
