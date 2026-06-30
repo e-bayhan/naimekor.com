@@ -77,7 +77,7 @@ section{padding:80px 20px}
 .hero-eyebrow{font-size:12.5px;font-weight:600;color:var(--teal);letter-spacing:.4px;margin-bottom:10px;opacity:.9}
 .hero h1{font-size:clamp(28px,3.6vw,50px);font-weight:700;line-height:1.2;margin-bottom:16px}
 .hero-h1-sub{font-size:clamp(16px,2vw,26px);font-weight:500;color:var(--txt2);display:block;margin-top:4px}
-.hero-img-caption{text-align:center;font-size:13px;font-weight:600;color:var(--txt2);margin-top:12px;letter-spacing:.2px}
+.hero-img-caption{text-align:center;font-size:26px;font-weight:600;color:var(--txt2);margin-top:12px;letter-spacing:.2px}
 .hero-p{font-size:14.5px;color:var(--txt2);line-height:1.75;margin-bottom:22px;max-width:430px}
 .hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
 .htag{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--txt2);background:#F5F7F8;border:1px solid var(--bdr);padding:6px 12px;border-radius:100px}
@@ -96,7 +96,7 @@ section{padding:80px 20px}
 @keyframes heroZoom{from{transform:scale(1.07);opacity:.7}to{transform:scale(1);opacity:1}}
 .hfloat{position:absolute;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:12px;padding:11px 15px;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;align-items:center;gap:10px;min-width:180px}
 .hf1{top:18px;right:-14px}
-.hf2{bottom:18px;right:18px}
+.hf2{bottom:48px;right:18px}
 .hf-ico{width:34px;height:34px;background:var(--teal-bg);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
 .hf-t{font-size:12.5px;font-weight:700;color:var(--txt)}
 .hf-s{font-size:11px;color:var(--txt2);margin-top:1px}
