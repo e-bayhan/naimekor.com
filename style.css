@@ -155,6 +155,8 @@ section{padding:80px 20px}
 .about-txt .sub{margin-bottom:14px}
 .afacts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
 .af-full{grid-column:1/-1}
+.af-singles{grid-column:1/-1;display:flex;gap:12px}
+.af-singles .af{flex:0 0 auto}
 .af{background:#fff;border-radius:var(--r);padding:13px 15px;display:flex;align-items:flex-start;gap:10px;box-shadow:var(--sh)}
 .af-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .af-t{font-size:13px;font-weight:700;margin-bottom:2px}
