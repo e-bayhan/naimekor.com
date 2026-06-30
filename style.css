@@ -115,7 +115,7 @@ section{padding:80px 20px}
 .wc-img{width:100%;height:155px;object-fit:cover;display:block}
 .wc-body{padding:18px 20px 20px}
 .why-card h3{font-size:15px;font-weight:700;margin-bottom:7px}
-.why-card p{font-size:13px;color:var(--txt2);line-height:1.65}
+.why-card p{font-size:13px;color:var(--txt);line-height:1.65}
 
 /* ── CAROUSEL SECTIONS ── */
 .sec-head{text-align:center;margin-bottom:36px}
@@ -127,7 +127,7 @@ section{padding:80px 20px}
 .car-img{width:100%;height:150px;object-fit:cover;display:block}
 .car-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
 .car-card h3{font-size:14.5px;font-weight:700;color:var(--txt);margin:0}
-.car-card p{font-size:12.5px;color:var(--txt2);line-height:1.62;flex:1;margin:0}
+.car-card p{font-size:12.5px;color:var(--txt);line-height:1.62;flex:1;margin:0}
 .car-link{font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:gap .2s;margin-top:4px}
 .car-link:hover{gap:8px}
 .sec-more{text-align:center;margin-top:16px}
